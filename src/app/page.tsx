@@ -1,6 +1,11 @@
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import FeatureSection from "@/components/features";
+import Hero from "@/components/hero";
 
 export default function Home() {
-  return <main className="">hello world</main>;
+  return (
+    <main className="">
+      <Hero />
+      <FeatureSection />
+    </main>
+  );
 }
