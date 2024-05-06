@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   return (
-    <div className="md:grid md:grid-cols-2 pt-8 pb-20">
+    <div className="md:grid md:grid-cols-2 pt-14 pb-20">
       <div className="items-center flex justify-center">
         <div className=" ">
           <div className="text-5xl font-semibold pb-10">
