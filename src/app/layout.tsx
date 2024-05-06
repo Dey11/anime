@@ -22,7 +22,7 @@ export default function RootLayout({
         <div>
           <Header />
         </div>
-        <div className="flex-1">{children}</div>
+        <div className={`flex-1 ${inter.className}`}>{children}</div>
         <Footer />
       </body>
     </html>
