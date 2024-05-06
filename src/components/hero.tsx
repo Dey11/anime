@@ -3,10 +3,10 @@ import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
-    <div className="md:grid md:grid-cols-2 pt-8">
+    <div className="md:grid md:grid-cols-2 pt-8 pb-20">
       <div className="items-center flex justify-center">
         <div className=" ">
-          <div className="text-5xl font-semibold pb-5">
+          <div className="text-5xl font-semibold pb-10">
             Stream Anime Without Logging In
           </div>
           <div className="text-lg text-gray-400">
@@ -14,7 +14,7 @@ const Hero = () => {
             favourite shows in different quality options.
           </div>
           <div className="text-center">
-            <Button variant={"outline"} className="mt-5 text-md">
+            <Button variant={"outline"} className="mt-10 text-md">
               Explore Animes
             </Button>
           </div>

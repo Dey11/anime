@@ -4,7 +4,7 @@ import React from "react";
 const Header = () => {
   return (
     <div className=" mx-auto flex flex-row justify-between py-8 items-center">
-      <div className="text-2xl font-bold">
+      <div className="text-2xl font-semibold">
         <Link href={"/"}>
           <h1>AniDey</h1>
         </Link>

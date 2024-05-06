@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="pb-5 text-sm text-slate-300">
+    <div className="pb-5 pt-10 text-sm text-slate-300">
       <hr className="border border-slate-500" />
       <div className="flex flex-row justify-between items-center pt-4 px-5">
         <div className="">© 2024 AniDay. All Rights Reserved.</div>
