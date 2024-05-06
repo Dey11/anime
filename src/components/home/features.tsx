@@ -6,7 +6,7 @@ import {
   LogInIcon,
   SettingsIcon,
   UnplugIcon,
-} from "./icons";
+} from "../icons";
 
 const FeatureSection = () => {
   return (
