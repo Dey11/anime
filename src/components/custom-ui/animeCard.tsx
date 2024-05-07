@@ -40,7 +40,7 @@ const AnimeCard = ({
         </CardHeader>
         <CardContent className="flex justify-center pb-2">
           <Image
-            className="rounded-md"
+            className="rounded-md h-auto w-auto"
             src={image || "https://gogocdn.net"}
             width={120}
             height={120}

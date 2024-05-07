@@ -1,10 +1,10 @@
 "use client";
 
 import SearchBar from "@/components/custom-ui/searchBar";
-import { Button } from "@/components/ui/button";
 import fetchSearchResults from "../actions/fetchSearchResults";
 import { useState } from "react";
 import AnimeCard, { AnimeCardProps } from "@/components/custom-ui/animeCard";
+import SearchBtn from "@/components/custom-ui/searchBtn";
 
 const Anime = () => {
   const [searchResults, setSearchResults] = useState<AnimeCardProps[] | null>(
@@ -17,9 +17,11 @@ const Anime = () => {
       </div>
       <form
         className="flex mx-20 gap-10 items-center"
-        action={async (formData: FormData) => {
+        action={async (formData) => {
           const query = formData.get("query") as string;
-          if (!query) return;
+          if (!query) {
+            return;
+          }
           try {
             const res = await fetchSearchResults(query);
             setSearchResults(res);
@@ -29,7 +31,7 @@ const Anime = () => {
         }}
       >
         <SearchBar />
-        <Button variant={"outline"}>Search</Button>
+        <SearchBtn />
       </form>
       <div className="grid grid-cols-2 justify-items-center overflow-hidden md:grid-cols-5 gap-5 pt-10">
         {searchResults ? (
