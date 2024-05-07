@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -14,8 +15,8 @@ const Hero = () => {
             favourite shows in different quality options.
           </div>
           <div className="text-center">
-            <Button variant={"outline"} className="mt-10 text-md">
-              Explore Animes
+            <Button asChild variant={"outline"} className="mt-10 text-md">
+              <Link href={"/anime"}> Explore Animes</Link>
             </Button>
           </div>
         </div>
