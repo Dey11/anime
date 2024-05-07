@@ -6,7 +6,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "gogocdn.net",
         port: "",
-        pathname: "/cover/**",
+        pathname: "/*/**",
       },
     ],
   },
