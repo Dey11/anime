@@ -3,6 +3,7 @@ import Image from "next/image";
 import fetchData from "@/lib/fetchData";
 import { Button } from "@/components/ui/button";
 import { animeInfo } from "@/lib/fetchData";
+import Link from "next/link";
 
 const AnimeInfo = async ({ params }: { params: { id: string } }) => {
   const response: animeInfo = await fetchData(params.id);
@@ -47,8 +48,8 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
         <h1 className="text-3xl pb-5">Episodes:</h1>
         <div className="gap-5 grid grid-cols-6 md:grid-cols-12">
           {episodes.map((episode: { id: string; number: number }) => (
-            <Button variant={"outline"} key={episode.id}>
-              {episode.number}
+            <Button asChild variant={"outline"} key={episode.id}>
+              <Link href={`/anime/stream/${episode.id}`}>{episode.number}</Link>
             </Button>
           ))}
         </div>
