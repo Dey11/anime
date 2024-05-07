@@ -6,6 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
 import Image from "next/image";
 
 type AnimeCardProps = {
@@ -40,8 +42,8 @@ const AnimeCard = ({
           alt={id}
         />
       </CardContent>
-      <CardFooter className="flex justify-end text-xs text-slate-300">
-        {subOrDub}
+      <CardFooter className="flex justify-end text-xs ">
+        <Badge variant="secondary">{subOrDub}</Badge>
       </CardFooter>
     </Card>
   );
