@@ -6,7 +6,7 @@ const loadEpisode = async (episodeId: string) => {
     // const res = await axios.get(url);
     const res = await fetch(url, { cache: "force-cache" });
     const result = await res.json();
-    console.log(result);
+    // console.log(result);
     const videoUrls = result.sources;
     const link = videoUrls.filter(
       (singleSource: { url: string; isM3U8: boolean; quality: string }) => {
