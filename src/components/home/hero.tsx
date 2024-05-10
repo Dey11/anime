@@ -16,7 +16,7 @@ const Hero = () => {
           </div>
           <div className="text-center">
             <Button asChild variant={"outline"} className="mt-10 text-md">
-              <Link href={"/anime"}> Explore Animes</Link>
+              <Link href={"/anime/search"}> Explore Animes</Link>
             </Button>
           </div>
         </div>

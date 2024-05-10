@@ -7,7 +7,7 @@ import {
 } from "@vidstack/react/player/layouts/default";
 
 import loadEpisode from "@/lib/fetchEpisode";
-import fetchData from "@/lib/fetchData";
+import fetchData from "@/lib/fetchAnimeData";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -26,7 +26,7 @@ const StreamAnime = async ({
       Stream {params.animeId}, {` ${episodeNumber}`}
       <MediaPlayer title={`Episode: ${episodeNumber}`} src={response}>
         <MediaProvider />
-        <DefaultVideoLayout thumbnails={""} icons={defaultLayoutIcons} />
+        <DefaultVideoLayout icons={defaultLayoutIcons} />
       </MediaPlayer>
       <div>
         <h1 className="text-3xl pb-5">Other episodes:</h1>

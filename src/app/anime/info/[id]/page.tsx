@@ -1,8 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import fetchData from "@/lib/fetchData";
+import fetchData from "@/lib/fetchAnimeData";
 import { Button } from "@/components/ui/button";
-import { animeInfo } from "@/lib/fetchData";
+import { animeInfo } from "@/lib/fetchAnimeData";
 import Link from "next/link";
 
 const AnimeInfo = async ({ params }: { params: { id: string } }) => {
@@ -21,6 +21,7 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
             alt=""
           />
         </div>
+
         <div className="col-span-4">
           <h1 className="text-5xl pb-5">{response.title}</h1>
           <h3 className="text-2xl text-gray-400 pb-5">

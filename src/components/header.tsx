@@ -14,7 +14,7 @@ const Header = () => {
           <Link href={"/"}>
             <li>Home</li>
           </Link>
-          <Link href={"/"}>
+          <Link href={"/anime/search"}>
             <li>Explore</li>
           </Link>
         </ul>

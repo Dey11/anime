@@ -22,8 +22,13 @@ type episodes = {
 
 const fetchData = async (id: string) => {
   try {
-    const result = await axios.get(`${process.env.BACKEND_URL}/info/${id}`);
-    return result.data;
+    // const result = await axios.get(`${process.env.BACKEND_URL}/info/${id}`);
+    const res = await fetch(`${process.env.BACKEND_URL}/info/${id}`, {
+      next: { revalidate: 86400 },
+    });
+
+    const result = await res.json();
+    return result;
   } catch (err) {
     console.log(err);
     return false;
