@@ -43,7 +43,7 @@ const Anime = () => {
           </div>
         </form>
       </div>
-      <div className="grid grid-cols-2 justify-items-center overflow-hidden md:grid-cols-3 lg:grid-cols-5 md:gap-5 pt-10">
+      <div className="grid grid-cols-2 justify-items-center overflow-hidden md:grid-cols-3 lg:grid-cols-5 md:gap-5 pt-10 gap-y-3 gap-x-1">
         {searchResults ? (
           searchResults.map((result) => {
             return (

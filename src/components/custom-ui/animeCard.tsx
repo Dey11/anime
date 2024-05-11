@@ -20,7 +20,7 @@ const AnimeCard = ({
   return (
     <Link href={`/anime/info/${id}`}>
       <div
-        className="md:w-52 md:h-72 w-40 h-60 bg-white relative rounded-md border border-gray-300
+        className="md:w-52 md:h-72 w-32 h-52 bg-white relative rounded-md border border-gray-300
          overflow-hidden transition-transform duration-50 transform-gpu hover:scale-105"
       >
         <Image
