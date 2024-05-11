@@ -12,6 +12,28 @@ import fetchData from "@/lib/fetchAnimeData";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { episodeId: string; animeId: string };
+}): Promise<Metadata> {
+  const response = await fetchData(params.animeId);
+  const title = response.title;
+  const description = `Stream ${title} episode ${params.episodeId
+    .split("-")
+    .slice(-1)} for free, without ads.`;
+  const img = response.image;
+  return {
+    title,
+    description,
+    openGraph: {
+      images: [img],
+    },
+  };
+}
+
 const StreamAnime = async ({
   params,
 }: {

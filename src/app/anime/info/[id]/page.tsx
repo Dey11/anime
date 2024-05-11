@@ -4,6 +4,25 @@ import fetchData from "@/lib/fetchAnimeData";
 import { Button } from "@/components/ui/button";
 import { animeInfo } from "@/lib/fetchAnimeData";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const response = await fetchData(params.id);
+  const description = response.description;
+  const title = response.title;
+  const img = response.image;
+  return {
+    title,
+    description,
+    openGraph: {
+      images: [img],
+    },
+  };
+}
 
 const AnimeInfo = async ({ params }: { params: { id: string } }) => {
   const response: animeInfo = await fetchData(params.id);

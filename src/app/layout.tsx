@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   title: "Anidey: Watch Ad-free Anime Online",
   description:
     "Stream ad-free anime online. Supports a high quality player for enhanced experience.",
+  category: "anime",
+  creator: "Dey",
 };
 
 export default function RootLayout({
