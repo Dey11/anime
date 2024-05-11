@@ -2,15 +2,46 @@
 
 import SearchBar from "@/components/custom-ui/searchBar";
 import fetchSearchResults from "@/actions/fetchSearchResults";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { AnimeCardProps } from "@/components/custom-ui/animeCard";
 import AnimeCard from "@/components/custom-ui/animeCard";
 import SearchBtn from "@/components/custom-ui/searchBtn";
+import { useSearchParams } from "next/navigation";
 
 const Anime = () => {
   const [searchResults, setSearchResults] = useState<AnimeCardProps[] | null>(
     null
   );
+  const [errorState, setErrorState] = useState("");
+
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
+
+  const fetchQueryResults = async () => {
+    if (params.get("query") as string) {
+      setSearchResults(null);
+      try {
+        const res = await fetchSearchResults(params.get("query") as string, 1);
+        if (res.results.length == 0) {
+          setErrorState(
+            "No Anime found with that name. Please consider using a different name"
+          );
+          return;
+        }
+        setSearchResults(res.results);
+        setErrorState("");
+      } catch (err) {
+        console.log(err);
+        setErrorState(
+          "No Anime found with that name. Please consider using a different name"
+        );
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchQueryResults();
+  }, []);
 
   return (
     <div>
@@ -20,18 +51,7 @@ const Anime = () => {
       <div className="flex justify-center ">
         <form
           className=" flex justify-between gap-5"
-          action={async (formData) => {
-            const query = formData.get("query") as string;
-            if (!query) {
-              return;
-            }
-            try {
-              const res = await fetchSearchResults(query, 1);
-              setSearchResults(res.results);
-            } catch (err) {
-              console.log(err);
-            }
-          }}
+          action={fetchQueryResults}
         >
           <Suspense>
             <div className="">
@@ -61,6 +81,11 @@ const Anime = () => {
           <></>
         )}
       </div>
+      {errorState ? (
+        <div className="text-center text-slate-300">{errorState}</div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

@@ -29,6 +29,7 @@ const AnimeCard = ({
           fill
           alt={title}
           sizes="fill"
+          priority={true}
         />
         <div
           className="absolute bottom-0 left-0 right-0 text-center p-2 
