@@ -11,10 +11,6 @@ export const metadata: Metadata = {
   description:
     "Stream ad-free anime online. Supports a high quality player for enhanced experience.",
 };
-<meta
-  name="google-site-verification"
-  content="sN4wNvPHdVw7fPmBw4tD1iX2TRqXGEEntIgrOt1O9ok"
-/>;
 
 export default function RootLayout({
   children,
