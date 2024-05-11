@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className=" mx-auto flex flex-row justify-between py-8 items-center font-medium items-center">
+    <div className=" mx-auto flex flex-row justify-between py-8 items-center font-medium">
       <div className="text-xl ">
         <Link href={"/"}>
           <h1>Anidey</h1>
