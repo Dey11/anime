@@ -7,9 +7,14 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Anidey: Watch Anime Online",
-  description: "Stream ad-free anime online",
+  title: "Anidey: Watch Ad-free Anime Online",
+  description:
+    "Stream ad-free anime online. Supports a high quality player for enhanced experience.",
 };
+<meta
+  name="google-site-verification"
+  content="sN4wNvPHdVw7fPmBw4tD1iX2TRqXGEEntIgrOt1O9ok"
+/>;
 
 export default function RootLayout({
   children,
