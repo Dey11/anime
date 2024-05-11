@@ -1,15 +1,6 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { fit } from "sharp";
 
 export type AnimeCardProps = {
   title: string;
@@ -27,30 +18,27 @@ const AnimeCard = ({
   subOrDub,
 }: AnimeCardProps) => {
   return (
-    <Link href={`/anime/info/${id}`} className="">
-      <Card
-        className="w-[200px] h-[325px] bg-gray-800 text-slate-50 border-0 
-        overflow-hidden transition-all ease-in-out duration-300 hover:shadow-xl"
+    <Link href={`/anime/info/${id}`}>
+      <div
+        className="md:w-52 md:h-72 w-40 h-60 bg-white relative rounded-md border border-gray-300
+         overflow-hidden transition-transform duration-50 transform-gpu hover:scale-105"
       >
-        <CardHeader className="text-center pb-2">
-          <CardTitle className="text-md">{title}</CardTitle>
-          <CardDescription className="text-xs text-slate-300">
-            {releaseDate}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="flex justify-center pb-2">
-          <Image
-            className="rounded-md h-auto w-auto"
-            src={image || "https://gogocdn.net"}
-            width={120}
-            height={120}
-            alt={id}
-          />
-        </CardContent>
-        <CardFooter className="flex justify-end text-xs ">
-          <Badge variant="secondary">{subOrDub}</Badge>
-        </CardFooter>
-      </Card>
+        <Image
+          className="object-cover"
+          src={image}
+          fill
+          alt={title}
+          sizes="fill"
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 text-center p-2 
+        bg-black bg-opacity-65
+        text-white"
+        >
+          <div className="font-semibold">{title}</div>
+          <div className="  text-xs">{releaseDate}</div>
+        </div>
+      </div>
     </Link>
   );
 };

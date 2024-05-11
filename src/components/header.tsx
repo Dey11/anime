@@ -3,14 +3,14 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className=" mx-auto flex flex-row justify-between py-8 items-center">
-      <div className="text-2xl font-semibold">
+    <div className=" mx-auto flex flex-row justify-between py-8 items-center font-medium items-center">
+      <div className="text-xl ">
         <Link href={"/"}>
-          <h1>AniDey</h1>
+          <h1>Anidey</h1>
         </Link>
       </div>
       <nav>
-        <ul className="flex gap-10 text-lg font-medium">
+        <ul className="flex gap-10 text-lg ">
           <Link href={"/"}>
             <li>Home</li>
           </Link>

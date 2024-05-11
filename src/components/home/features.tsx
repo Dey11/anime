@@ -10,11 +10,11 @@ import {
 
 const FeatureSection = () => {
   return (
-    <div className="py-20">
-      <div className="text-center text-5xl pb-14 font-semibold">
+    <div className="md:py-20 pt-20 pb-10">
+      <div className="text-center md:text-5xl text-3xl md:pb-14 pb-10 font-semibold">
         Why Choose Us?
       </div>
-      <div className="grid md:grid-cols-3 grid-cols-2 justify-items-start gap-10">
+      <div className="grid md:grid-cols-3 grid-cols-2 justify-items-start md:gap-10 gap-4">
         <div className="flex gap-3 ">
           <div>
             <UnplugIcon />

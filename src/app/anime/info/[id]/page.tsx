@@ -10,9 +10,9 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
   const episodes = response.episodes;
   const description = splitDesc(response.description);
   return (
-    <div className="pt-10">
-      <div className="grid md:grid-cols-6 gap-10 items-start pb-16">
-        <div className=" col-span-2">
+    <div className="md:pt-10 text-center md:text-left">
+      <div className="md:grid md:grid-cols-6 md:gap-10 items-start md:pb-16 pb-6">
+        <div className=" md:col-span-2 pb-5 flex pr-10 pl-10 pt-5 md:pr-0 md:pl-0 md:pt-0">
           <Image
             className="rounded-md"
             src={response.image}
@@ -23,20 +23,25 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
         </div>
 
         <div className="col-span-4">
-          <h1 className="text-5xl pb-5">{response.title}</h1>
-          <h3 className="text-2xl text-gray-400 pb-5">
+          <h1 className="md:text-5xl text-2xl pb-5">
+            {response.title} - {response.subOrDub}
+          </h1>
+          <h3 className="md:text-2xl text-lg text-gray-400 pb-5">
             [{response.otherName}]
           </h3>
-          <div className="pb-5 flex gap-2">
+          <div className="pb-5">
             {response.genres.map((genre: string) => (
-              <Badge key={genre}>{genre}</Badge>
+              <Badge className="bg-gray-700 mr-2" key={genre}>
+                {genre}
+              </Badge>
             ))}
-            <Badge>{response.type}</Badge>
-            <Badge>{response.subOrDub}</Badge>
           </div>
-          <div className="flex gap-10 text-gray-300 pb-8">
-            <h3 className="text-xl">Released: {response.releaseDate}</h3>
-            <h3 className="text-xl">Status: {response.status}</h3>
+          <div className="text-gray-300 md:pb-8 pb-5">
+            <h3 className="md:text-xl text-lg">
+              Released: {response.releaseDate}
+            </h3>
+            <h3 className="md:text-xl text-lg">Status: {response.status}</h3>
+            <h3 className="md:text-xl text-lg">Status: {response.type}</h3>
           </div>
           {description.map((miniDesc) => (
             <p className="text-md leading-loose pb-2" key={miniDesc}>
@@ -46,7 +51,7 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
         </div>
       </div>
       <div>
-        <h1 className="text-3xl pb-5">Episodes:</h1>
+        <h1 className="md:text-3xl text-2xl pb-5">Episodes:</h1>
         <div className="gap-5 grid grid-cols-6 md:grid-cols-12">
           {episodes.map((episode: { id: string; number: number }) => (
             <Button asChild variant={"outline"} key={episode.id}>

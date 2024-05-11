@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="pb-5 pt-10 text-sm text-slate-300">
-      <hr className="border border-slate-500" />
-      <div className="flex flex-row justify-between items-center pt-4 px-5">
-        <div className="">© 2024 AniDay. All Rights Reserved.</div>
+    <div className="pb-5 pt-10 md:text-sm text-xs text-slate-500">
+      <hr className="border border-slate-800" />
+      <div className="flex flex-row justify-between pt-4 px-5">
+        <div className="">Anidey</div>
         <div>
           <ul className="flex gap-5">
             <li>Privacy policy</li>

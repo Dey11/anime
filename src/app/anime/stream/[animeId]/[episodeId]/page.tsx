@@ -23,14 +23,19 @@ const StreamAnime = async ({
   const episodeNumber = params.episodeId.split("-").slice(-1);
   return (
     <div>
-      Stream {params.animeId}, {` ${episodeNumber}`}
-      <MediaPlayer title={`Episode: ${episodeNumber}`} src={response}>
-        <MediaProvider />
-        <DefaultVideoLayout icons={defaultLayoutIcons} />
-      </MediaPlayer>
+      <div className="md:text-3xl text-lg md:pb-5 pb-5">
+        {animeInfo.title}
+        <div className="md:pt-5 pt-2 text-md">Episode{` ${episodeNumber}`}</div>
+      </div>
+      <div className="mx-2">
+        <MediaPlayer title={`Episode: ${episodeNumber}`} src={response}>
+          <MediaProvider />
+          <DefaultVideoLayout icons={defaultLayoutIcons} />
+        </MediaPlayer>
+      </div>
       <div>
-        <h1 className="text-3xl pb-5">Other episodes:</h1>
-        <div className="gap-5 grid grid-cols-6 md:grid-cols-12">
+        <h1 className="md:text-3xl text-lg py-5">Other episodes:</h1>
+        <div className="md:gap-5 gap-2 grid grid-cols-6 md:grid-cols-12">
           {episodes.map((episode: { id: string; number: number }) => (
             <Button
               asChild
