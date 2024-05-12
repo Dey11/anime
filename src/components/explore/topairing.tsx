@@ -1,4 +1,6 @@
-import TopAiringCard, { TopAiringCardProps } from "../custom-ui/exploreCard";
+import ExplorePageCard, {
+  ExplorePageCardProps,
+} from "../custom-ui/exploreCard";
 import {
   Carousel,
   CarouselContent,
@@ -39,18 +41,19 @@ const TopAiring = async () => {
           }}
         >
           <CarouselContent className="-ml-2">
-            {episodesOfFirstPage.map((episode: TopAiringCardProps) => (
+            {episodesOfFirstPage.map((episode: ExplorePageCardProps) => (
               <CarouselItem
                 className="pl-3 basis-2/2 md:basis-5/5"
                 key={episode.id}
               >
-                <TopAiringCard
+                <ExplorePageCard
                   id={episode.id}
                   key={episode.id}
                   title={episode.title}
                   image={episode.image}
                   episodeId={episode.episodeId}
                   episodeNumber={episode.episodeNumber}
+                  priority={true}
                 />
               </CarouselItem>
             ))}
@@ -69,18 +72,19 @@ const TopAiring = async () => {
           }}
         >
           <CarouselContent className="-ml-2">
-            {episodesOfSecondPage.map((episode: TopAiringCardProps) => (
+            {episodesOfSecondPage.map((episode: ExplorePageCardProps) => (
               <CarouselItem
                 className="pl-3 basis-2/2 md:basis-5/5"
                 key={episode.id}
               >
-                <TopAiringCard
+                <ExplorePageCard
                   id={episode.id}
                   key={episode.id}
                   title={episode.title}
                   image={episode.image}
                   episodeId={episode.episodeId}
                   episodeNumber={episode.episodeNumber}
+                  priority={false}
                 />
               </CarouselItem>
             ))}

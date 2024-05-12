@@ -53,6 +53,7 @@ const RecentEps = async () => {
                   image={episode.image}
                   episodeId={episode.episodeId}
                   episodeNumber={episode.episodeNumber}
+                  priority={false}
                 />
               </CarouselItem>
             ))}
@@ -83,6 +84,7 @@ const RecentEps = async () => {
                   image={episode.image}
                   episodeId={episode.episodeId}
                   episodeNumber={episode.episodeNumber}
+                  priority={false}
                 />
               </CarouselItem>
             ))}

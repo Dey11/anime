@@ -7,6 +7,7 @@ export type ExplorePageCardProps = {
   image: string;
   episodeId: string;
   episodeNumber: number;
+  priority: boolean;
 };
 
 const ExplorePageCard = ({
@@ -15,6 +16,7 @@ const ExplorePageCard = ({
   image,
   episodeId,
   episodeNumber,
+  priority,
 }: ExplorePageCardProps) => {
   return (
     <Link href={`/anime/stream/${id}/${episodeId}`}>
@@ -28,7 +30,7 @@ const ExplorePageCard = ({
           fill
           alt={title}
           sizes="fill"
-          priority={true}
+          priority={priority}
         />
         <div
           className="absolute bottom-0 left-0 right-0 text-center p-2 
