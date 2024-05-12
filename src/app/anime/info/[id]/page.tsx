@@ -74,7 +74,7 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
         <h1 className="md:text-3xl text-2xl pb-5">Episodes:</h1>
         <div className="gap-5 grid grid-cols-6 md:grid-cols-12">
           {episodes.map((episode: { id: string; number: number }) => (
-            <Button asChild variant={"outline"} key={episode.id}>
+            <Button asChild variant={"default"} key={episode.id}>
               <Link href={`/anime/stream/${params.id}/${episode.id}`}>
                 {episode.number}
               </Link>

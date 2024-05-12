@@ -5,7 +5,7 @@ const SearchBtn = () => {
   const { pending } = useFormStatus();
 
   return (
-    <Button variant={"outline"} disabled={pending}>
+    <Button variant={"secondary"} disabled={pending}>
       {pending ? "Searching..." : "Search"}
     </Button>
   );

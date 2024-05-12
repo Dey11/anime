@@ -26,7 +26,7 @@ const SearchSection = () => {
           <Input placeholder="Jujutsu Kaisen" name="query" />
         </div>
         <div className="md:mt-0 text-center">
-          <Button variant={"outline"} className="px-10 md:px-5">
+          <Button variant={"secondary"} className="px-10 md:px-5">
             Search
           </Button>
         </div>

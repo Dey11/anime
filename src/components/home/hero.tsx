@@ -15,7 +15,7 @@ const Hero = () => {
             favourite shows in different quality options.
           </div>
           <div className="text-center">
-            <Button asChild variant={"outline"} className="mt-10 text-md">
+            <Button asChild variant={"default"} className="mt-10 text-md">
               <Link href={"/anime"}> Explore our collection</Link>
             </Button>
           </div>

@@ -61,7 +61,7 @@ const StreamAnime = async ({
           {episodes.map((episode: { id: string; number: number }) => (
             <Button
               asChild
-              variant={"outline"}
+              variant={"default"}
               key={episode.id}
               className={
                 params.episodeId == episode.id ? "bg-blue-500 border-0" : ""
