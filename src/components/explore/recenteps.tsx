@@ -1,3 +1,4 @@
+import { reduceName } from "@/lib/utils";
 import ExplorePageCard, {
   ExplorePageCardProps,
 } from "../custom-ui/exploreCard";
@@ -49,7 +50,7 @@ const RecentEps = async () => {
                 <ExplorePageCard
                   id={episode.id}
                   key={episode.id}
-                  title={episode.title}
+                  title={reduceName(episode.title)}
                   image={episode.image}
                   episodeId={episode.episodeId}
                   episodeNumber={episode.episodeNumber}
@@ -80,7 +81,7 @@ const RecentEps = async () => {
                 <ExplorePageCard
                   id={episode.id}
                   key={episode.id}
-                  title={episode.title}
+                  title={reduceName(episode.title)}
                   image={episode.image}
                   episodeId={episode.episodeId}
                   episodeNumber={episode.episodeNumber}
