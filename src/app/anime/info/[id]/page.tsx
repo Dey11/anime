@@ -38,6 +38,7 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
             width={500}
             height={500}
             alt=""
+            priority={true}
           />
         </div>
 

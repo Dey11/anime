@@ -15,7 +15,7 @@ const Header = () => {
             <li>Home</li>
           </Link>
           <Link href={"/anime/search"}>
-            <li>Explore</li>
+            <li>Search</li>
           </Link>
         </ul>
       </nav>

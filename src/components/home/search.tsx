@@ -1,7 +1,11 @@
+"use client";
+import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
 const SearchSection = () => {
+  const router = useRouter();
+
   return (
     <div className="md:grid md:grid-cols-6 md:pt-20 pb-10 gap-4 items-center">
       <div className=" col-span-3 text-center md:pb-0 pb-5">
@@ -10,15 +14,23 @@ const SearchSection = () => {
           Search for your favourite anime and start streaming right away!
         </p>
       </div>
-
-      <div className="col-span-2">
-        <Input placeholder="Jujutsu Kaisen" />
-      </div>
-      <div className="mt-5 md:mt-0 text-center">
-        <Button variant={"outline"} className="px-10 md:px-5">
-          Search
-        </Button>
-      </div>
+      <form
+        className="col-span-3 grid grid-cols-3"
+        action={(formData: FormData) => {
+          const query = formData.get("query") as string;
+          if (!query) return;
+          router.push(`/anime/search?query=${query}`);
+        }}
+      >
+        <div className="col-span-2">
+          <Input placeholder="Jujutsu Kaisen" name="query" />
+        </div>
+        <div className="mt-5 md:mt-0 text-center">
+          <Button variant={"outline"} className="px-10 md:px-5">
+            Search
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };
