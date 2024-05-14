@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { SquareLibrary, Tv } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -15,8 +16,15 @@ const Hero = () => {
             favourite shows in different quality options.
           </div>
           <div className="text-center">
-            <Button asChild variant={"default"} className="mt-10 text-md">
-              <Link href={"/anime"}> Explore our collection</Link>
+            <Button
+              asChild
+              variant={"default"}
+              className="mt-10 text-md items-center"
+            >
+              <Link href={"/anime"}>
+                <span className="pr-1">Explore our collection</span>
+                <Tv size={24} strokeWidth={1.75} className="pb-1" />
+              </Link>
             </Button>
           </div>
         </div>
