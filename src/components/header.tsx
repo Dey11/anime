@@ -14,16 +14,11 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
-import { Button } from "./ui/button";
-import clsx from "clsx";
-
 import { useSession } from "next-auth/react";
-
 import { SignIn } from "./signInBtn";
 import { SignOut } from "./signOutBtn";
 
 const Header = () => {
-  const isLoggedIn = false;
   const session = useSession();
 
   return (
