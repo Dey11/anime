@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sheet,
   SheetClose,
@@ -15,8 +17,14 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import clsx from "clsx";
 
+import { useSession } from "next-auth/react";
+
+import { SignIn } from "./signInBtn";
+import { SignOut } from "./signOutBtn";
+
 const Header = () => {
   const isLoggedIn = false;
+  const session = useSession();
 
   return (
     <div className=" mx-auto flex flex-row justify-between pt-8 pb-4 items-center font-medium">
@@ -31,13 +39,7 @@ const Header = () => {
           <AlignJustify size={32} />
         </SheetTrigger>
         <SheetContent side={"right"}>
-          <ScrollArea
-            className={clsx(
-              "h-[calc(100vh-170px)]",
-              isLoggedIn && "h-[calc(100vh-(_)px)]",
-              "pt-5 pb-10 md:pl-6"
-            )}
-          >
+          <ScrollArea className={"h-[calc(100vh-100px)]"}>
             <nav>
               <ul>
                 {navElements.map((element) => (
@@ -61,11 +63,10 @@ const Header = () => {
             <ScrollBar />
           </ScrollArea>
           <SheetHeader className="absolute bg-opacity-100 bg-inherit bottom-0 left-0 right-0 mx-10 pb-8">
-            <Separator className="mb-5 bg-white" />
             <div className="flex flex-col gap-2">
-              <Button className="flex-1">Login</Button>
-              <h4 className="text-center">or</h4>
-              <Button className="flex-1">Sign Up</Button>
+              {session.status === "loading" ? "" : ""}
+              {session.status === "authenticated" ? <SignOut /> : ""}
+              {session.status === "unauthenticated" ? <SignIn /> : ""}
             </div>
           </SheetHeader>
         </SheetContent>
