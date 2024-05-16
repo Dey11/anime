@@ -5,6 +5,8 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { SessionProvider } from "next-auth/react";
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +33,8 @@ export default function RootLayout({
             </Suspense>
           </div>
           <div className={`flex-1 ${inter.className}`}>{children}</div>
+          <Analytics />
+          <SpeedInsights />
           <Footer />
         </SessionProvider>
       </body>
