@@ -37,6 +37,7 @@ const Hero = () => {
           height={800}
           alt="Gojo Satoru - JJK"
           quality={100}
+          priority
         />
       </div>
     </div>
