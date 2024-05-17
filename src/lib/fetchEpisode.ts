@@ -1,6 +1,4 @@
-import axios from "axios";
-
-const loadEpisode = async (episodeId: string) => {
+const loadEpisode = async (episodeId: string): Promise<FetchEpisode> => {
   const url = `${process.env.BACKEND_URL}/watch/${episodeId}`;
   try {
     // const res = await axios.get(url);
@@ -14,13 +12,24 @@ const loadEpisode = async (episodeId: string) => {
           return true;
         }
         return false;
-      }
+      },
     );
-    return link[0].url;
+    const downloadLink = result.download;
+    return { episodeUrl: link, downloadUrl: downloadLink, error: false };
   } catch (err) {
     console.log(err);
-    return "";
+    return {
+      episodeUrl: [{ url: "", isM3U8: "", quality: "" }],
+      downloadUrl: "",
+      error: true,
+    };
   }
 };
 
 export default loadEpisode;
+
+interface FetchEpisode {
+  episodeUrl: [{ url: string; isM3U8: string; quality: string }];
+  downloadUrl: string;
+  error: boolean;
+}

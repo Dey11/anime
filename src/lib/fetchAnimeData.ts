@@ -20,7 +20,7 @@ type episodes = {
   number: number;
 };
 
-const fetchData = async (id: string) => {
+const fetchData = async (id: string): Promise<animeInfo> => {
   try {
     // const result = await axios.get(`${process.env.BACKEND_URL}/info/${id}`);
     const res = await fetch(`${process.env.BACKEND_URL}/info/${id}`, {
@@ -31,7 +31,20 @@ const fetchData = async (id: string) => {
     return result;
   } catch (err) {
     console.log(err);
-    return false;
+    return {
+      id: "",
+      title: "",
+      genres: [],
+      totalEpisodes: 0,
+      image: "",
+      releaseDate: "",
+      description: "",
+      subOrDub: "sub",
+      type: "",
+      status: "Ongoing",
+      otherName: "",
+      episodes: [{ id: "", number: 0 }],
+    };
   }
 };
 
