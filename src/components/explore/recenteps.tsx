@@ -15,9 +15,8 @@ const fetchRecentEps = async (page: number) => {
     const res = await fetch(
       `${process.env.BACKEND_URL}/recent-episodes?page=${page}`,
       {
-        // cache: "no-store",
         next: { revalidate: 3600 },
-      },
+      }
     );
     const result = await res.json();
     return result.results;
@@ -27,16 +26,11 @@ const fetchRecentEps = async (page: number) => {
 };
 
 const RecentEps = async () => {
-  const pageOne = await fetchRecentEps(1);
-  const pageTwo = await fetchRecentEps(2);
-
-  const [recentEpsPageOne, recentEpsPageTwo] = await Promise.all([
-    pageOne,
-    pageTwo,
-  ]);
+  const recentEpsPageOne = await fetchRecentEps(1);
+  const recentEpsPageTwo = await fetchRecentEps(2);
 
   return (
-    <div className="pt-10 text-xl md:text-3xl">
+    <div className="pt-10 md:text-3xl text-xl">
       <h1 className="pb-8">Recent Episodes:</h1>
       <div className="pb-10">
         <Carousel
@@ -50,7 +44,7 @@ const RecentEps = async () => {
           <CarouselContent className="-ml-2">
             {recentEpsPageOne.map((episode: ExplorePageCardProps) => (
               <CarouselItem
-                className="basis-2/2 md:basis-5/5 pl-3"
+                className="pl-3 basis-2/2 md:basis-5/5"
                 key={episode.id}
               >
                 <ExplorePageCard
@@ -81,7 +75,7 @@ const RecentEps = async () => {
           <CarouselContent className="-ml-2">
             {recentEpsPageTwo.map((episode: ExplorePageCardProps) => (
               <CarouselItem
-                className="basis-2/2 md:basis-5/5 pl-3"
+                className="pl-3 basis-2/2 md:basis-5/5"
                 key={episode.id}
               >
                 <ExplorePageCard

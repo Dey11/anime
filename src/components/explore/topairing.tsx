@@ -16,8 +16,7 @@ const fetchTopAiring = async (page: number) => {
       `${process.env.BACKEND_URL}/top-airing?page=${page}`,
       {
         next: { revalidate: 86400 },
-        // cache: "no-store",
-      },
+      }
     );
     const result = await res.json();
     return result.results;
@@ -27,16 +26,11 @@ const fetchTopAiring = async (page: number) => {
 };
 
 const TopAiring = async () => {
-  const firstPage = fetchTopAiring(1);
-  const secondPage = fetchTopAiring(2);
-
-  const [episodesOfFirstPage, episodesOfSecondPage] = await Promise.all([
-    firstPage,
-    secondPage,
-  ]);
+  const episodesOfFirstPage = await fetchTopAiring(1);
+  const episodesOfSecondPage = await fetchTopAiring(2);
 
   return (
-    <div className="pt-10 text-xl md:text-3xl">
+    <div className="pt-10 md:text-3xl text-xl">
       <h1 className="pb-8">Top Airing Anime of the Season:</h1>
       <div className="pb-10">
         <Carousel
@@ -50,7 +44,7 @@ const TopAiring = async () => {
           <CarouselContent className="-ml-2">
             {episodesOfFirstPage.map((episode: ExplorePageCardProps) => (
               <CarouselItem
-                className="basis-2/2 md:basis-5/5 pl-3"
+                className="pl-3 basis-2/2 md:basis-5/5"
                 key={episode.id}
               >
                 <ExplorePageCard
@@ -81,7 +75,7 @@ const TopAiring = async () => {
           <CarouselContent className="-ml-2">
             {episodesOfSecondPage.map((episode: ExplorePageCardProps) => (
               <CarouselItem
-                className="basis-2/2 md:basis-5/5 pl-3"
+                className="pl-3 basis-2/2 md:basis-5/5"
                 key={episode.id}
               >
                 <ExplorePageCard

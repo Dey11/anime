@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export type animeInfo = {
   id: string;
   title: string;
