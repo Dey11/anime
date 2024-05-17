@@ -8,8 +8,13 @@ const nextConfig = {
         port: "",
         pathname: "/*/**",
       },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
     ],
   },
 };
 // https://gogocdn.net/cover/jujutsu-kaisen-0.png
+
 export default nextConfig;
