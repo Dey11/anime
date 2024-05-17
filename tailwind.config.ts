@@ -18,9 +18,9 @@ const config = {
       },
     },
     extend: {
-      fontFamily: {
-        acme: ["Acme", "sans-serif"],
-      },
+      // fontFamily: {
+      //   acme: ["Acme", "sans-serif"],
+      // },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

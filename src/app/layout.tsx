@@ -7,9 +7,7 @@ import { SessionProvider } from "next-auth/react";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
 const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
   title: "Anidey: Watch Ad-free Anime Online",
   description:
@@ -17,7 +15,6 @@ export const metadata: Metadata = {
   category: "anime",
   creator: "Dey",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,22 +22,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-acme dark mx-auto flex min-h-dvh flex-col tracking-wide">
-        {/* ${inter.className} */}
+      <body className="min-h-dvh dark max-w-[1350px] mx-auto px-5 md:px-10 flex flex-col">
         <SessionProvider>
-          <div className="px-5 md:px-28">
+          <div>
             <Suspense>
               <Header />
             </Suspense>
           </div>
-          <div className={`mx-auto  max-w-[1350px] flex-1 px-5 md:px-10`}>
-            {children}
-          </div>
+          <div className={`flex-1 ${inter.className}`}>{children}</div>
           <Analytics />
           <SpeedInsights />
-          <div className="">
-            <Footer />
-          </div>
+          <Footer />
         </SessionProvider>
       </body>
     </html>

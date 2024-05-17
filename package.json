@@ -19,12 +19,9 @@
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
-<<<<<<< HEAD
     "@radix-ui/react-switch": "^1.0.3",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
-=======
->>>>>>> parent of da1db2e (add vercel analytics)
     "@vidstack/react": "^1.11.21",
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
