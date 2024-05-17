@@ -5,12 +5,12 @@ import fetchSearchResults from "@/actions/fetchSearchResults";
 import { Suspense, useState, useEffect } from "react";
 import { AnimeCardProps } from "@/components/custom-ui/animeCard";
 import AnimeCard from "@/components/custom-ui/animeCard";
-import SearchBtn from "@/components/custom-ui/searchBtn";
+import SearchBtn from "@/components/custom-ui/buttons/searchBtn";
 import { useSearchParams } from "next/navigation";
 
 const Anime = () => {
   const [searchResults, setSearchResults] = useState<AnimeCardProps[] | null>(
-    null
+    null,
   );
   const [errorState, setErrorState] = useState("");
 
@@ -24,7 +24,7 @@ const Anime = () => {
         const res = await fetchSearchResults(params.get("query") as string, 1);
         if (res.results.length == 0) {
           setErrorState(
-            "No Anime found with that name. Please consider using a different name"
+            "No Anime found with that name. Please consider using a different name",
           );
           return;
         }
@@ -33,7 +33,7 @@ const Anime = () => {
       } catch (err) {
         console.log(err);
         setErrorState(
-          "No Anime found with that name. Please consider using a different name"
+          "No Anime found with that name. Please consider using a different name",
         );
       }
     }
@@ -45,7 +45,7 @@ const Anime = () => {
 
   return (
     <div>
-      <div className="text-center pb-10 md:text-4xl text-xl md:font-semibold">
+      <div className="pb-10 text-center text-xl md:text-4xl md:font-semibold">
         Search for your favourite anime now!
       </div>
       <div className="flex justify-center ">
@@ -63,7 +63,7 @@ const Anime = () => {
           </div>
         </form>
       </div>
-      <div className="grid grid-cols-2 justify-items-center overflow-hidden md:grid-cols-3 lg:grid-cols-5 md:gap-5 pt-10 gap-y-3 gap-x-1">
+      <div className="grid grid-cols-2 justify-items-center gap-x-1 gap-y-3 overflow-hidden pt-10 md:grid-cols-3 md:gap-5 lg:grid-cols-5">
         {searchResults ? (
           searchResults.map((result) => {
             return (
