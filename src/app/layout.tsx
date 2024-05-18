@@ -22,14 +22,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-dvh dark max-w-[1350px] mx-auto px-5 md:px-10 flex flex-col">
+      <body className="dark flex min-h-dvh  flex-col ">
         <SessionProvider>
-          <div>
+          <div className="px-5 md:px-10">
             <Suspense>
               <Header />
             </Suspense>
           </div>
-          <div className={`flex-1 ${inter.className}`}>{children}</div>
+          <div
+            className={`flex-1 ${inter.className} max-w-[1350px] lg:mx-auto`}
+          >
+            {children}
+          </div>
           <Analytics />
           <SpeedInsights />
           <Footer />

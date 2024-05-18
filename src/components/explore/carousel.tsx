@@ -21,9 +21,9 @@ const CarouselComponent = () => {
         <CarouselContent className="-ml-2">
           <CarouselItem className="basis-2/3 pl-4">
             <Link href={"/anime/info/chainsaw-man"}>
-              <div className="relative justify-center rounded-md overflow-hidden border-2 border-gray-300">
+              <div className="relative justify-center overflow-hidden rounded-md border-2 border-gray-300">
                 <Image
-                  className="object-cover mx-auto w-auto h-auto"
+                  className="mx-auto h-auto w-auto object-cover"
                   src={"/chainsawman.jpg"}
                   alt="chainsaw man"
                   width={836}
@@ -33,9 +33,9 @@ const CarouselComponent = () => {
                 />
 
                 <div
-                  className="absolute bottom-0 left-0 right-0 md:pb-10 bg-black 
-                  md:pt-5 md:pl-10 md:text-4xl font-semibold bg-opacity-50 text-white
-                  text-center md:text-left py-2 pl-0 text-xl px-2 md:px-0"
+                  className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 
+                  px-2 py-2 pl-0 text-center text-xs font-semibold
+                  text-white md:px-0 md:pb-10 md:pl-10 md:pt-5 md:text-left md:text-4xl"
                 >
                   Chainsaw Man
                 </div>
@@ -49,9 +49,9 @@ const CarouselComponent = () => {
                 "/anime/info/mushoku-tensei-ii-isekai-ittara-honki-dasu-part-2"
               }
             >
-              <div className="relative justify-center rounded-md overflow-hidden border-2 border-gray-300">
+              <div className="relative justify-center overflow-hidden rounded-md border-2 border-gray-300">
                 <Image
-                  className="object-cover mx-auto w-auto h-auto"
+                  className="mx-auto h-auto w-auto object-cover"
                   src={"/mushoku2.jpg"}
                   alt="jobless reincarnation"
                   width={836}
@@ -60,9 +60,9 @@ const CarouselComponent = () => {
                   priority
                 />
                 <div
-                  className="absolute bottom-0 left-0 right-0 md:pb-10 bg-black 
-                  md:pt-5 md:pl-10 md:text-4xl font-semibold bg-opacity-50 text-white
-                  text-center md:text-left py-2 pl-0 text-xl px-2 md:px-0"
+                  className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 
+                  px-2 py-2 pl-0 text-center text-xs font-semibold
+                  text-white md:px-0 md:pb-10 md:pl-10 md:pt-5 md:text-left md:text-4xl"
                 >
                   Mushoku Tensei Season 2
                 </div>
@@ -72,9 +72,9 @@ const CarouselComponent = () => {
 
           <CarouselItem className="basis-2/3 pl-4">
             <Link href={"/anime/info/jujutsu-kaisen-tv-2nd-season"}>
-              <div className="relative justify-center rounded-md overflow-hidden border-2 border-gray-300">
+              <div className="relative justify-center overflow-hidden rounded-md border-2 border-gray-300">
                 <Image
-                  className="object-cover mx-auto w-auto h-auto"
+                  className="mx-auto h-auto w-auto object-cover"
                   src={"/jjk.jpg"}
                   alt="jujutsu kaisen"
                   width={836}
@@ -83,9 +83,9 @@ const CarouselComponent = () => {
                   priority
                 />
                 <div
-                  className="absolute bottom-0 left-0 right-0 md:pb-10 bg-black 
-                  md:pt-5 md:pl-10 md:text-4xl font-semibold bg-opacity-50 text-white
-                  text-center md:text-left py-2 pl-0 text-xl px-2 md:px-0"
+                  className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 
+                  px-2 py-2 pl-0 text-center text-xs font-semibold
+                  text-white md:px-0 md:pb-10 md:pl-10 md:pt-5 md:text-left md:text-4xl"
                 >
                   Jujutsu Kaisen Season 2
                 </div>
