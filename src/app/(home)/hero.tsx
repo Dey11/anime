@@ -1,17 +1,17 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "../../components/ui/button";
 import Link from "next/link";
 import { SquareLibrary, Tv } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="md:grid md:grid-cols-2 pt-14 md:pb-20 md:text-left text-center">
-      <div className="items-center flex justify-center">
+    <div className="pt-14 text-center md:grid md:grid-cols-2 md:pb-20 md:text-left">
+      <div className="flex items-center justify-center">
         <div className=" ">
-          <div className="md:text-5xl text-4xl font-semibold md:pb-10 pb-5">
+          <div className="pb-5 text-4xl font-semibold md:pb-10 md:text-5xl">
             Stream Anime Without Logging In
           </div>
-          <div className="md:text-lg text-md text-gray-400">
+          <div className="text-md text-gray-400 md:text-lg">
             Enjoy ad-free anime streaming with the ability to download your
             favourite shows in different quality options.
           </div>
@@ -19,7 +19,7 @@ const Hero = () => {
             <Button
               asChild
               variant={"default"}
-              className="mt-10 text-md items-center"
+              className="text-md mt-10 items-center"
             >
               <Link href={"/anime"}>
                 <span className="pr-1">Explore our collection</span>
@@ -31,7 +31,7 @@ const Hero = () => {
       </div>
       <div className="">
         <Image
-          className="rounded-md md:pt-0 pt-10"
+          className="rounded-md pt-10 md:pt-0"
           src={"/gojo.jpg"}
           width={800}
           height={800}

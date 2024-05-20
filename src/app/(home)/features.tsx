@@ -6,15 +6,15 @@ import {
   LogInIcon,
   SettingsIcon,
   UnplugIcon,
-} from "../icons";
+} from "./icons";
 
 const FeatureSection = () => {
   return (
-    <div className="md:py-20 pt-20 pb-10">
-      <div className="text-center md:text-5xl text-3xl md:pb-14 pb-10 font-semibold">
+    <div className="pb-10 pt-20 md:py-20">
+      <div className="pb-10 text-center text-3xl font-semibold md:pb-14 md:text-5xl">
         Why Choose Us?
       </div>
-      <div className="grid md:grid-cols-3 grid-cols-2 justify-items-start md:gap-10 gap-4">
+      <div className="grid grid-cols-2 justify-items-start gap-4 md:grid-cols-3 md:gap-10">
         <div className="flex gap-3 ">
           <div>
             <UnplugIcon />

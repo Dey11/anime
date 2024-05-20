@@ -20,7 +20,11 @@ const SearchForm = ({ className }: { className?: string }) => {
       }}
     >
       <div className="col-span-1">
-        <Input placeholder="Jujutsu Kaisen" name="query" />
+        <Input
+          placeholder="Jujutsu Kaisen"
+          name="query"
+          className="capitalize"
+        />
       </div>
       <div className="text-center md:mt-0">
         <Button variant={"secondary"} className="px-10 md:px-5">

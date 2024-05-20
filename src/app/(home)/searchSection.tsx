@@ -1,4 +1,4 @@
-import SearchForm from "./searchForm";
+import SearchForm from "../../components/custom-ui/searchForm";
 
 const SearchSection = () => {
   return (

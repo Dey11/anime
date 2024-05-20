@@ -1,6 +1,6 @@
-import FeatureSection from "@/components/home/features";
-import Hero from "@/components/home/hero";
-import SearchSection from "@/components/home/searchSection";
+import FeatureSection from "@/app/(home)/features";
+import Hero from "@/app/(home)/hero";
+import SearchSection from "@/app/(home)/searchSection";
 
 export default function Home() {
   return (

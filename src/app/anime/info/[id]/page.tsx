@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import fetchData from "@/lib/fetchAnimeData";
 import { Button } from "@/components/ui/button";
-import { animeInfo } from "@/lib/fetchAnimeData";
+import { AnimeDetails } from "@/lib/fetchAnimeData";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -25,13 +25,13 @@ export async function generateMetadata({
 }
 
 const AnimeInfo = async ({ params }: { params: { id: string } }) => {
-  const response: animeInfo = await fetchData(params.id);
+  const response: AnimeDetails = await fetchData(params.id);
   const episodes = response.episodes;
   const description = splitDesc(response.description);
   return (
-    <div className="md:pt-10 text-center md:text-left">
-      <div className="md:grid md:grid-cols-6 md:gap-10 items-start md:pb-16 pb-6">
-        <div className=" md:col-span-2 pb-5 flex pr-10 pl-10 pt-5 md:pr-0 md:pl-0 md:pt-0">
+    <div className="text-center md:pt-10 md:text-left">
+      <div className="items-start pb-6 md:grid md:grid-cols-6 md:gap-10 md:pb-16">
+        <div className=" flex pb-5 pl-10 pr-10 pt-5 md:col-span-2 md:pl-0 md:pr-0 md:pt-0">
           <Image
             className="rounded-md"
             src={response.image}
@@ -43,36 +43,36 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
         </div>
 
         <div className="col-span-4">
-          <h1 className="md:text-5xl text-2xl pb-5">
+          <h1 className="pb-5 text-2xl md:text-5xl">
             {response.title} - {response.subOrDub}
           </h1>
-          <h3 className="md:text-2xl text-lg text-gray-400 pb-5">
+          <h3 className="pb-5 text-lg text-gray-400 md:text-2xl">
             [{response.otherName}]
           </h3>
           <div className="pb-5">
             {response.genres.map((genre: string) => (
-              <Badge className="bg-gray-700 mr-2" key={genre}>
+              <Badge className="mr-2 bg-gray-700" key={genre}>
                 {genre}
               </Badge>
             ))}
           </div>
-          <div className="text-gray-300 md:pb-8 pb-5">
-            <h3 className="md:text-xl text-lg">
+          <div className="pb-5 text-gray-300 md:pb-8">
+            <h3 className="text-lg md:text-xl">
               Released: {response.releaseDate}
             </h3>
-            <h3 className="md:text-xl text-lg">Status: {response.status}</h3>
-            <h3 className="md:text-xl text-lg">Status: {response.type}</h3>
+            <h3 className="text-lg md:text-xl">Status: {response.status}</h3>
+            <h3 className="text-lg md:text-xl">Status: {response.type}</h3>
           </div>
           {description.map((miniDesc) => (
-            <p className="text-md leading-loose pb-2" key={miniDesc}>
+            <p className="text-md pb-2 leading-loose" key={miniDesc}>
               {miniDesc}
             </p>
           ))}
         </div>
       </div>
       <div>
-        <h1 className="md:text-3xl text-2xl pb-5">Episodes:</h1>
-        <div className="gap-5 grid grid-cols-6 md:grid-cols-12">
+        <h1 className="pb-5 text-2xl md:text-3xl">Episodes:</h1>
+        <div className="grid grid-cols-6 gap-5 md:grid-cols-12">
           {episodes.map((episode: { id: string; number: number }) => (
             <Button asChild variant={"default"} key={episode.id}>
               <Link href={`/anime/stream/${params.id}/${episode.id}`}>

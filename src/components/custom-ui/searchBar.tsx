@@ -21,7 +21,7 @@ const SearchBar = () => {
 
   return (
     <Input
-      className="border-2 border-slate-50 md:text-2xl text-lg"
+      className="border-2 border-slate-50 text-lg capitalize md:text-2xl"
       onChange={(e) => handleInputChange(e.target.value)}
       defaultValue={searchParams.get("query")?.toString()}
       name="query"

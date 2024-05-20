@@ -1,6 +1,6 @@
-import CarouselComponent from "@/components/explore/carousel";
-import RecentEps from "@/components/explore/recenteps";
-import TopAiring from "@/components/explore/topairing";
+import CarouselComponent from "@/app/anime/(explore)/carousel";
+import RecentEps from "@/app/anime/(explore)/recenteps";
+import TopAiring from "@/app/anime/(explore)/topairing";
 import { Metadata } from "next";
 import { Suspense } from "react";
 

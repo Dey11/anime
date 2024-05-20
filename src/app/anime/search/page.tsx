@@ -3,8 +3,8 @@
 import SearchBar from "@/components/custom-ui/searchBar";
 import fetchSearchResults from "@/actions/fetchSearchResults";
 import { Suspense, useState, useEffect } from "react";
-import { AnimeCardProps } from "@/components/custom-ui/animeCard";
-import AnimeCard from "@/components/custom-ui/animeCard";
+import { AnimeCardProps } from "@/components/animeCard";
+import AnimeCard from "@/components/animeCard";
 import SearchBtn from "@/components/custom-ui/buttons/searchBtn";
 import { useSearchParams } from "next/navigation";
 

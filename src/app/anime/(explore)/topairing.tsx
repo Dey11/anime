@@ -1,7 +1,5 @@
 import { reduceName } from "@/lib/utils";
-import ExplorePageCard, {
-  ExplorePageCardProps,
-} from "../custom-ui/exploreCard";
+import ExplorePageCard, { ExplorePageCardProps } from "./exploreCard";
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +14,7 @@ const fetchTopAiring = async (page: number) => {
       `${process.env.BACKEND_URL}/top-airing?page=${page}`,
       {
         next: { revalidate: 86400 },
-      }
+      },
     );
     const result = await res.json();
     return result.results;
@@ -30,13 +28,13 @@ const TopAiring = async () => {
   const episodesOfSecondPage = await fetchTopAiring(2);
 
   return (
-    <div className="pt-10 md:text-3xl text-xl">
+    <div className="pt-10 text-xl md:text-3xl">
       <h1 className="pb-8">Top Airing Anime of the Season:</h1>
       <div className="pb-10">
         <Carousel
           opts={{
             align: "start",
-            loop: false,
+            loop: true,
             duration: 20,
             slidesToScroll: 2,
           }}
@@ -44,7 +42,7 @@ const TopAiring = async () => {
           <CarouselContent className="-ml-2">
             {episodesOfFirstPage.map((episode: ExplorePageCardProps) => (
               <CarouselItem
-                className="pl-3 basis-2/2 md:basis-5/5"
+                className="basis-2/2 md:basis-5/5 pl-3"
                 key={episode.id}
               >
                 <ExplorePageCard
@@ -75,7 +73,7 @@ const TopAiring = async () => {
           <CarouselContent className="-ml-2">
             {episodesOfSecondPage.map((episode: ExplorePageCardProps) => (
               <CarouselItem
-                className="pl-3 basis-2/2 md:basis-5/5"
+                className="basis-2/2 md:basis-5/5 pl-3"
                 key={episode.id}
               >
                 <ExplorePageCard

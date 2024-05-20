@@ -22,18 +22,18 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { SignIn } from "./custom-ui/buttons/signInBtn";
-import { SignOut } from "./custom-ui/buttons/signOutBtn";
+import { SignIn } from "../components/custom-ui/buttons/signInBtn";
+import { SignOut } from "../components/custom-ui/buttons/signOutBtn";
 
-import { DropdownMenuForLoggedIn } from "./loggedInUserMenu";
-import SearchForm from "./home/searchForm";
-import { Button } from "./ui/button";
+import { DropdownMenuForLoggedIn } from "../components/loggedInUserMenu";
+import SearchForm from "../components/custom-ui/searchForm";
+import { Button } from "../components/ui/button";
 
 const Header = () => {
   const session = useSession();
 
   return (
-    <div className="mx-auto flex flex-row items-center justify-between pb-5 pt-5 font-medium">
+    <div className="flex w-full flex-row items-center justify-between py-5 font-medium">
       <div className="text-xl ">
         <Link href={"/"}>
           <h1>Anidey</h1>

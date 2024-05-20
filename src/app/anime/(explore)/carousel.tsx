@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const CarouselComponent = () => {
   return (
-    <div>
+    <div className="">
       <Carousel
         opts={{
           align: "center",
@@ -18,7 +18,7 @@ const CarouselComponent = () => {
           duration: 20,
         }}
       >
-        <CarouselContent className="-ml-2">
+        <CarouselContent className="-ml-4">
           <CarouselItem className="basis-2/3 pl-4">
             <Link href={"/anime/info/chainsaw-man"}>
               <div className="relative justify-center overflow-hidden rounded-md border-2 border-gray-300">

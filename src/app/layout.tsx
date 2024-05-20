@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Acme } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/app/header";
+import Footer from "@/app/footer";
 import { SessionProvider } from "next-auth/react";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
+const acme = Acme({ weight: "400", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Anidey: Watch Ad-free Anime Online",
   description:
@@ -22,16 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="dark flex min-h-dvh  flex-col ">
+      <body
+        className={`${acme.className} dark flex min-h-dvh flex-col tracking-wide [word-spacing:3px]`}
+      >
         <SessionProvider>
-          <div className="px-5 md:px-10">
+          <div className="mx-auto w-full max-w-screen-2xl px-10">
             <Suspense>
               <Header />
             </Suspense>
           </div>
-          <div
-            className={`flex-1 ${inter.className} max-w-[1350px] lg:mx-auto`}
-          >
+          <div className={`max-w-[1350px] flex-1 px-4 lg:mx-auto`}>
             {children}
           </div>
           <Analytics />
