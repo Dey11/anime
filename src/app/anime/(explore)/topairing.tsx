@@ -24,8 +24,13 @@ const fetchTopAiring = async (page: number) => {
 };
 
 const TopAiring = async () => {
-  const episodesOfFirstPage = await fetchTopAiring(1);
-  const episodesOfSecondPage = await fetchTopAiring(2);
+  const firstPage = await fetchTopAiring(1);
+  const secondPage = await fetchTopAiring(2);
+
+  const [episodesOfFirstPage, episodesOfSecondPage] = await Promise.all([
+    firstPage,
+    secondPage,
+  ]);
 
   return (
     <div className="pt-10 text-xl md:text-3xl">

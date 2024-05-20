@@ -51,7 +51,12 @@ const StreamAnime = async ({
       {animeInfo.id && episodeUrl[0].url && (
         <div>
           <div className="pb-5 text-lg md:pb-5 md:text-3xl">
-            {animeInfo.title}
+            <Link
+              href={`/anime/info/${params.animeId}`}
+              className="text-blue-100 hover:text-blue-500 hover:underline"
+            >
+              {animeInfo.title}
+            </Link>
             <div className="text-md pt-2 md:pt-5">
               Episode{` ${episodeNumber}`}
             </div>

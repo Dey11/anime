@@ -24,8 +24,13 @@ const fetchRecentEps = async (page: number) => {
 };
 
 const RecentEps = async () => {
-  const recentEpsPageOne = await fetchRecentEps(1);
-  const recentEpsPageTwo = await fetchRecentEps(2);
+  const pageOne = await fetchRecentEps(1);
+  const pageTwo = await fetchRecentEps(2);
+
+  const [recentEpsPageOne, recentEpsPageTwo] = await Promise.all([
+    pageOne,
+    pageTwo,
+  ]);
 
   return (
     <div className="pt-10 text-xl md:text-3xl">
