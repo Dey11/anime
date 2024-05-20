@@ -1,19 +1,12 @@
-import "@vidstack/react/player/styles/default/theme.css";
-import "@vidstack/react/player/styles/default/layouts/video.css";
-import { MediaPlayer, MediaProvider } from "@vidstack/react";
-import {
-  defaultLayoutIcons,
-  DefaultVideoLayout,
-} from "@vidstack/react/player/layouts/default";
-
 import loadEpisode from "@/lib/fetchEpisode";
 import fetchData from "@/lib/fetchAnimeData";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
 import { Metadata } from "next";
 import DownloadButton from "@/components/custom-ui/buttons/downloadBtn";
+import { Player } from "./Player";
+import { auth } from "@/auth";
 
 export async function generateMetadata({
   params,
@@ -40,6 +33,9 @@ const StreamAnime = async ({
 }: {
   params: { episodeId: string; animeId: string };
 }) => {
+  const session = await auth();
+  const user = session?.user?.email;
+
   const animeInfo = await fetchData(params.animeId);
   const episodes = animeInfo.episodes;
   const response = await loadEpisode(params.episodeId);
@@ -61,17 +57,18 @@ const StreamAnime = async ({
             </div>
           </div>
           <div className="mx-2">
-            <MediaPlayer
-              title={`Episode: ${episodeNumber}`}
-              src={episodeUrl[0].url}
-            >
-              <MediaProvider />
-              <DefaultVideoLayout icons={defaultLayoutIcons} />
-            </MediaPlayer>
+            <Player
+              episodeNumber={episodeNumber[0].split("-")[0]}
+              episodeUrl={episodeUrl[0].url}
+              isAuthenticated={user ? true : false}
+            />
           </div>
 
           <div className="pt-8 text-lg">
-            <DownloadButton url={downloadUrl} />
+            <DownloadButton
+              url={downloadUrl}
+              isAuthenticated={user ? true : false}
+            />
           </div>
 
           <div>
