@@ -33,7 +33,7 @@ const Header = () => {
   const session = useSession();
 
   return (
-    <div className="flex w-full flex-row items-center justify-between py-5 font-medium">
+    <header className="flex w-full flex-row items-center justify-between pb-3 pt-5 font-medium">
       <div className="text-xl ">
         <Link href={"/"}>
           <h1>Anidey</h1>
@@ -94,7 +94,7 @@ const Header = () => {
           </SheetContent>
         </Sheet>
       </div>
-    </div>
+    </header>
   );
 };
 

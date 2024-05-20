@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="pb-5 pt-10 md:text-sm text-xs text-slate-500">
+    <footer className="pb-5 pt-10 text-xs text-slate-500 md:text-sm">
       <hr className="border border-slate-800" />
-      <div className="flex flex-row justify-between pt-4 px-5">
+      <div className="flex flex-row justify-between px-5 pt-4">
         <div className="">Anidey</div>
         <div>
           <ul className="flex gap-5">
@@ -13,7 +13,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
