@@ -60,8 +60,8 @@ const Favourites = async () => {
 
   return (
     <div className="pt-10 text-xl md:text-3xl">
-      <h1 className="pb-8">Favourite Animes:</h1>
-      <div className="pb-10">
+      <h1 className="pb-5">Favourite Animes:</h1>
+      <div className="">
         <Carousel
           opts={{
             align: "start",
