@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { AnimeDetails } from "@/lib/fetchAnimeData";
 import Link from "next/link";
 import { Metadata } from "next";
+import FavouritesSection from "./FavouritesSection";
+import { Suspense } from "react";
 
 export async function generateMetadata({
   params,
@@ -44,7 +46,12 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
 
         <div className="col-span-4">
           <h1 className="pb-5 text-2xl md:text-5xl">
-            {response.title} - {response.subOrDub}
+            <span className="flex">
+              {response.title} - {response.subOrDub}
+              <Suspense>
+                <FavouritesSection animeId={params.id} />
+              </Suspense>
+            </span>
           </h1>
           <h3 className="pb-5 text-lg text-gray-400 md:text-2xl">
             [{response.otherName}]
