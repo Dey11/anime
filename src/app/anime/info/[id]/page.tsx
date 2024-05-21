@@ -46,10 +46,19 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
 
         <div className="col-span-4">
           <h1 className="pb-5 text-2xl md:text-5xl">
-            <span className="flex">
+            <span className="flex items-center">
               {response.title} - {response.subOrDub}
               <Suspense>
-                <FavouritesSection animeId={params.id} />
+                <FavouritesSection
+                  id={params.id}
+                  title={response.title}
+                  image={response.image}
+                  releaseDate={response.releaseDate}
+                  subOrDub={response.subOrDub}
+                  status={response.status}
+                  type={response.type}
+                  totalEpisodes={response.totalEpisodes}
+                />
               </Suspense>
             </span>
           </h1>

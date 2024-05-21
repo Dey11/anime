@@ -3,6 +3,7 @@ import RecentEps from "@/app/anime/(explore)/recenteps";
 import TopAiring from "@/app/anime/(explore)/topairing";
 import { Metadata } from "next";
 import { Suspense } from "react";
+import Favourites from "./Favourites";
 
 export const metadata: Metadata = {
   title: "Explore Anidey",
@@ -18,9 +19,15 @@ const page = () => {
       </div>
       <div>
         <Suspense fallback={"Loading"}>
+          <Favourites />
+        </Suspense>
+      </div>
+      <div>
+        <Suspense fallback={"Loading"}>
           <TopAiring />
         </Suspense>
       </div>
+
       <div>
         <Suspense fallback={"Loading"}>
           <RecentEps />

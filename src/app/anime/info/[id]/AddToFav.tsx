@@ -5,8 +5,23 @@ import clsx from "clsx";
 import { Heart } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import { AnimeCardProps } from "@/components/animeCard";
 
-const AddToFav = ({ animeId, liked }: { animeId: string; liked: boolean }) => {
+export interface FavCardProps extends AnimeCardProps {
+  liked: boolean;
+}
+
+const AddToFav = ({
+  id,
+  title,
+  image,
+  releaseDate,
+  subOrDub,
+  status,
+  type,
+  totalEpisodes,
+  liked,
+}: FavCardProps) => {
   const [isLiked, setIsLiked] = useState<boolean>(liked);
   const { toast } = useToast();
 
@@ -15,16 +30,26 @@ const AddToFav = ({ animeId, liked }: { animeId: string; liked: boolean }) => {
       <form
         action={async () => {
           try {
-            const addFavAction = await addFavAnimeToDb(animeId, isLiked);
+            const addFavAction = await addFavAnimeToDb({
+              id,
+              liked: isLiked,
+              title,
+              image,
+              releaseDate,
+              subOrDub,
+              status,
+              type,
+              totalEpisodes,
+            });
             if (isLiked) {
               toast({
                 title: "Added to favourites!",
-                description: `${animeId} has been added to your list`,
+                description: `${id} has been added to your list`,
               });
             } else {
               toast({
                 title: "Removed from favourites",
-                description: `${animeId} has been removed from your list`,
+                description: `${id} has been removed from your list`,
               });
             }
           } catch (err) {

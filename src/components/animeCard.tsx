@@ -9,6 +9,17 @@ export type AnimeCardProps = {
   subOrDub?: string;
   episodeId?: string;
   episodeNumber?: number;
+  status?: string;
+  type?: string;
+  episodes?: [
+    {
+      id: string;
+      number: number;
+      url: string;
+    },
+  ];
+  totalEpisodes?: number;
+  genres?: string[];
 };
 
 const AnimeCard = ({
@@ -19,12 +30,13 @@ const AnimeCard = ({
   subOrDub,
   episodeId,
   episodeNumber,
+  status,
 }: AnimeCardProps) => {
   return (
     <Link href={`/anime/info/${id}`}>
       <div
         className="duration-50 relative h-52 w-32 transform-gpu overflow-hidden rounded-md border
-         border-gray-300 transition-transform hover:scale-105 md:h-72 md:w-52"
+        border-gray-300 transition-transform hover:scale-105 md:h-72 md:w-52"
       >
         <Image
           className="object-cover"
