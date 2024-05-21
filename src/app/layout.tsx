@@ -7,6 +7,7 @@ import { SessionProvider } from "next-auth/react";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 const acme = Acme({ weight: "400", subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function RootLayout({
           <div className={`max-w-[1350px] flex-1 px-4 lg:mx-auto`}>
             {children}
           </div>
+          <Toaster />
           <Analytics />
           <SpeedInsights />
           <Footer />
