@@ -61,7 +61,20 @@ model VerificationToken {
 }
 
 model FavouriteAnime {
-  animeId String @unique
-  userId  String
-  user    User   @relation(fields: [userId], references: [id])
+  animeId       String   @unique
+  userId        String
+  user          User     @relation(fields: [userId], references: [id])
+  title         String
+  image         String
+  releaseDate   String
+  subOrDub      String?
+  status        String?
+  type          String?
+  // genres        Genres[]?
+  totalEpisodes Int?
+  updatedAt     DateTime @updatedAt
 }
+
+// enum Genres {
+//   String
+// }
