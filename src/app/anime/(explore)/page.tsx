@@ -20,12 +20,9 @@ const page = () => {
         <CarouselComponent />
       </div>
       <div>
-        <div className="pt-10 text-xl md:text-3xl">
-          <h1 className="pb-8">Favourites:</h1>
-          <Suspense fallback={<LoadingCarousel />}>
-            <Favourites />
-          </Suspense>
-        </div>
+        <Suspense fallback={<LoadingCarousel />}>
+          <Favourites />
+        </Suspense>
       </div>
       <div>
         <div className="pt-10 text-xl md:text-3xl">

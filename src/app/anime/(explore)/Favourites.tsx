@@ -31,7 +31,7 @@ const Favourites = async () => {
     return <div></div>;
   }
 
-  const favs = await fetchFavourites(session.user.id || "");
+  const favs = await fetchFavourites(session.user.id!);
 
   if (favs == -1) {
     return (
@@ -47,40 +47,46 @@ const Favourites = async () => {
   }
   if (favs.length == 0) {
     return (
-      <div className="pb-5 text-xl text-slate-400">
-        Nothing to show here. Add an anime to favourites first.
+      <div className="pt-10 text-xl md:text-3xl">
+        <h1 className="pb-8">Favourites:</h1>
+        <div className="pb-5 text-xl text-slate-400">
+          Nothing to show here. Add an anime to favourites first.
+        </div>
       </div>
     );
   }
 
   return (
     <div>
-      <Carousel
-        opts={{
-          align: "start",
-          loop: false,
-          duration: 20,
-          slidesToScroll: 2,
-        }}
-      >
-        <CarouselContent className="-ml-2">
-          {favs.map((fav) => (
-            <CarouselItem
-              className="basis-2/2 md:basis-5/5 pb-2 pl-3 text-sm md:text-lg"
-              key={fav.animeId}
-            >
-              <AnimeCard
-                title={fav.title}
-                id={fav.animeId}
-                image={fav.image}
-                releaseDate={fav.releaseDate}
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <div className="pt-10 text-xl md:text-3xl">
+        <h1 className="pb-8">Favourites:</h1>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+            duration: 20,
+            slidesToScroll: 2,
+          }}
+        >
+          <CarouselContent className="-ml-2">
+            {favs.map((fav) => (
+              <CarouselItem
+                className="basis-2/2 md:basis-5/5 pb-2 pl-3 text-sm md:text-lg"
+                key={fav.animeId}
+              >
+                <AnimeCard
+                  title={fav.title}
+                  id={fav.animeId}
+                  image={fav.image}
+                  releaseDate={fav.releaseDate}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
     </div>
   );
 };
