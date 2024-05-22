@@ -4,6 +4,8 @@ import TopAiring from "@/app/anime/(explore)/topairing";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import Favourites from "./Favourites";
+import LoadingCard from "@/components/loadingCard";
+import LoadingCarousel from "./LoadingCarousel";
 
 export const metadata: Metadata = {
   title: "Explore Anidey",
@@ -18,20 +20,29 @@ const page = () => {
         <CarouselComponent />
       </div>
       <div>
-        <Suspense fallback={"Loading"}>
-          <Favourites />
-        </Suspense>
+        <div className="pt-10 text-xl md:text-3xl">
+          <h1 className="pb-8">Favourites:</h1>
+          <Suspense fallback={<LoadingCarousel />}>
+            <Favourites />
+          </Suspense>
+        </div>
       </div>
       <div>
-        <Suspense fallback={"Loading"}>
-          <TopAiring />
-        </Suspense>
+        <div className="pt-10 text-xl md:text-3xl">
+          <h1 className="pb-8">Top Airing Anime of the Season:</h1>
+          <Suspense fallback={<LoadingCarousel />}>
+            <TopAiring />
+          </Suspense>
+        </div>
       </div>
 
       <div>
-        <Suspense fallback={"Loading"}>
-          <RecentEps />
-        </Suspense>
+        <div className="pt-10 text-xl md:text-3xl">
+          <h1 className="pb-8">Recent Episodes:</h1>
+          <Suspense fallback={<LoadingCarousel />}>
+            <RecentEps />
+          </Suspense>
+        </div>
       </div>
     </div>
   );

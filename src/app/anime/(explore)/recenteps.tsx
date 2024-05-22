@@ -17,9 +17,11 @@ const fetchRecentEps = async (page: number) => {
       },
     );
     const result = await res.json();
+    if (result.results.length == 0) return -1;
     return result.results;
   } catch (err) {
     console.log(err);
+    return -1;
   }
 };
 
@@ -32,9 +34,14 @@ const RecentEps = async () => {
     pageTwo,
   ]);
 
+  if (pageOne == -1 || pageTwo == -1) {
+    return (
+      <div className="pb-5 text-xl text-slate-400">Error loading results</div>
+    );
+  }
+
   return (
-    <div className="pt-10 text-xl md:text-3xl">
-      <h1 className="pb-8">Recent Episodes:</h1>
+    <div>
       <div className="pb-10">
         <Carousel
           opts={{

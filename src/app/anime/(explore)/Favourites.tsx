@@ -47,48 +47,40 @@ const Favourites = async () => {
   }
   if (favs.length == 0) {
     return (
-      <div className="pt-10 text-xl md:text-3xl">
-        <h1 className="pb-8">Favourite Animes:</h1>
-        <div className="pb-10">
-          <div className="flex items-center justify-center">
-            Nothing to show here. Add an anime to favourites first.
-          </div>
-        </div>
+      <div className="pb-5 text-xl text-slate-400">
+        Nothing to show here. Add an anime to favourites first.
       </div>
     );
   }
 
   return (
-    <div className="pt-10 text-xl md:text-3xl">
-      <h1 className="pb-5">Favourite Animes:</h1>
-      <div className="">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: false,
-            duration: 20,
-            slidesToScroll: 2,
-          }}
-        >
-          <CarouselContent className="-ml-2">
-            {favs.map((fav) => (
-              <CarouselItem
-                className="basis-2/2 md:basis-5/5 pb-2 pl-3 text-sm md:text-lg"
-                key={fav.animeId}
-              >
-                <AnimeCard
-                  title={fav.title}
-                  id={fav.animeId}
-                  image={fav.image}
-                  releaseDate={fav.releaseDate}
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </div>
+    <div>
+      <Carousel
+        opts={{
+          align: "start",
+          loop: false,
+          duration: 20,
+          slidesToScroll: 2,
+        }}
+      >
+        <CarouselContent className="-ml-2">
+          {favs.map((fav) => (
+            <CarouselItem
+              className="basis-2/2 md:basis-5/5 pb-2 pl-3 text-sm md:text-lg"
+              key={fav.animeId}
+            >
+              <AnimeCard
+                title={fav.title}
+                id={fav.animeId}
+                image={fav.image}
+                releaseDate={fav.releaseDate}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   );
 };
