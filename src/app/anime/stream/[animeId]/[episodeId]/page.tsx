@@ -49,7 +49,7 @@ const StreamAnime = async ({
         <div className="text-2xl">Error. Invalid URL/Anime.</div>
       )}
       {animeInfo.id && episodeUrl[0].url && (
-        <div>
+        <div className="max-h-4xl max-w-4xl">
           <div className="pb-5 text-lg md:pb-5 md:text-3xl">
             <Link
               href={`/anime/info/${params.animeId}`}
