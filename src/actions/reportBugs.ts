@@ -12,6 +12,7 @@ async function reportBug({ username, description, url }: reportBugProps) {
     // const newBug = await
   } catch (err) {
     console.log(err);
+
     return -1;
   }
 }
