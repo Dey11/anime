@@ -14,9 +14,9 @@ const page = async () => {
   }
 
   return (
-    <div className="overflow-hidden rounded-2xl bg-[#FFD9D9] pb-10 font-semibold text-black md:w-[965px]">
+    <div className="mt-5 overflow-hidden rounded-2xl bg-[#FFD9D9] pb-10 font-semibold text-black md:w-[965px]">
       <div className="relative">
-        <div className="h-[130px] bg-slate-500 p-1 md:h-[150px]">
+        <div className="h-[130px]  p-1 md:h-[150px]">
           <Image
             src={"/mushoku2.jpg"}
             alt="mushoku"
@@ -24,8 +24,13 @@ const page = async () => {
             fill={true}
           />
         </div>
-        <div className="absolute left-5 top-3/4 h-20 w-20 overflow-hidden rounded-full bg-white md:top-2/4 md:h-32 md:w-32">
-          <Image src={"/jjk.jpg"} alt="marin" objectFit="cover" fill={true} />
+        <div className="absolute left-5 top-3/4 h-20 w-20 overflow-hidden rounded-full border-2 border-red-300 bg-white md:top-2/4 md:h-32 md:w-32">
+          <Image
+            src={session.user.image as string}
+            alt={session.user.name as string}
+            objectFit="cover"
+            fill={true}
+          />
         </div>
       </div>
 
@@ -101,7 +106,7 @@ const page = async () => {
         <Save />
       </Button>
 
-      <h1 className="pt-10 text-center text-2xl">Under construction!</h1>
+      {/* <h1 className="pt-10 text-center text-2xl">Under construction!</h1> */}
     </div>
   );
 };
