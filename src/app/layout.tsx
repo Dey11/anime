@@ -24,9 +24,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${acme.className} dark flex min-h-dvh flex-col tracking-wide [word-spacing:3px]`}
-      >
+      <body className={`${inter.className} dark flex min-h-dvh flex-col `}>
+        {/* tracking-wide [word-spacing:3px] */}
         <SessionProvider>
           <div className=" sticky top-0 z-50 mx-auto w-full max-w-screen-2xl rounded-b-md bg-black px-10">
             <Suspense>
