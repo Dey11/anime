@@ -38,6 +38,8 @@ const page = async () => {
                 className="rounded-2xl pl-10 dark:border-0 dark:bg-white"
                 name="email"
                 type="email"
+                value={session.user.email as string}
+                disabled
               />
               <div className="absolute bottom-0 left-0 top-0 ml-2 mt-2">
                 <Mail />
