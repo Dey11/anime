@@ -12,6 +12,11 @@ model User {
   name            String?
   email           String           @unique
   emailVerified   DateTime?
+  username        String?          @unique
+  password        String?
+  dob             String?
+  bio             String?
+  bannerColor     String?          @default("#000000")
   image           String?
   accounts        Account[]
   sessions        Session[]
