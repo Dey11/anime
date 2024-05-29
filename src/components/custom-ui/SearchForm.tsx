@@ -1,12 +1,18 @@
 "use client";
+
 import clsx from "clsx";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const SearchForm = ({ className }: { className?: string }) => {
   const router = useRouter();
+  const pathname = usePathname();
+
+  if (pathname == "/anime/search") return <></>;
+
   return (
     <form
       className={clsx(

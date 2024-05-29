@@ -23,7 +23,8 @@ const SearchBar = () => {
     <Input
       className="border-2 border-slate-50 text-lg capitalize md:text-2xl"
       onChange={(e) => handleInputChange(e.target.value)}
-      defaultValue={searchParams.get("query")?.toString()}
+      // defaultValue={searchParams.get("query")?.toString()}
+      value={searchParams.get("query")?.toString()}
       name="query"
       placeholder="Enter your anime"
     />

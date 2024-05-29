@@ -1,6 +1,6 @@
 "use client";
 
-import SearchBar from "@/components/custom-ui/searchBar";
+import SearchBar from "@/components/custom-ui/SearchBar";
 import fetchSearchResults from "@/actions/fetchSearchResults";
 import { Suspense, useState, useEffect } from "react";
 import { AnimeCardProps } from "@/components/AnimeCard";

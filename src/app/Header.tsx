@@ -29,8 +29,7 @@ import { SignIn } from "../components/custom-ui/buttons/signInBtn";
 import { SignOut } from "../components/custom-ui/buttons/signOutBtn";
 
 import { DropdownMenuForLoggedIn } from "./LoggedInUserMenu";
-import SearchForm from "../components/custom-ui/searchForm";
-import { Button } from "../components/ui/button";
+import SearchForm from "../components/custom-ui/SearchForm";
 
 const Header = () => {
   const session = useSession();
