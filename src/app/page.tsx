@@ -1,7 +1,7 @@
-import FeatureSection from "@/app/(home)/features";
-import Hero from "@/app/(home)/hero";
-import SearchSection from "@/app/(home)/searchSection";
-import LoggedInFeats from "./(home)/loggedInFeats";
+import FeatureSection from "@/app/(home)/Features";
+import Hero from "@/app/(home)/Hero";
+import SearchSection from "@/app/(home)/SearchSection";
+import LoggedInFeats from "./(home)/LoggedInFeats";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { Label } from "@/components/ui/label";
-import { ColorPicker } from "./Colorpicker";
+import { ColorPicker } from "./ColorPicker";
 import { Input } from "@/components/ui/input";
 import { Key, Mail, Save } from "lucide-react";
 import Username from "./Username";

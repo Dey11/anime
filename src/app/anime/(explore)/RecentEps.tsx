@@ -1,5 +1,5 @@
 import { reduceName } from "@/lib/utils";
-import ExplorePageCard, { ExplorePageCardProps } from "./exploreCard";
+import ExplorePageCard, { ExplorePageCardProps } from "./ExploreCard";
 import {
   Carousel,
   CarouselContent,
@@ -8,12 +8,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const fetchTopAiring = async (page: number) => {
+const fetchRecentEps = async (page: number) => {
   try {
     const res = await fetch(
-      `${process.env.BACKEND_URL}/top-airing?page=${page}`,
+      `${process.env.BACKEND_URL}/recent-episodes?page=${page}`,
       {
-        next: { revalidate: 86400 },
+        next: { revalidate: 3600 },
       },
     );
     const result = await res.json();
@@ -25,19 +25,20 @@ const fetchTopAiring = async (page: number) => {
   }
 };
 
-const TopAiring = async () => {
-  const firstPage = await fetchTopAiring(1);
-  const secondPage = await fetchTopAiring(2);
+const RecentEps = async () => {
+  const pageOne = await fetchRecentEps(1);
+  const pageTwo = await fetchRecentEps(2);
 
-  const [episodesOfFirstPage, episodesOfSecondPage] = await Promise.all([
-    firstPage,
-    secondPage,
+  const [recentEpsPageOne, recentEpsPageTwo] = await Promise.all([
+    pageOne,
+    pageTwo,
   ]);
 
-  if (episodesOfFirstPage == -1 || episodesOfSecondPage == -1)
+  if (pageOne == -1 || pageTwo == -1) {
     return (
       <div className="pb-5 text-xl text-slate-400">Error loading results</div>
     );
+  }
 
   return (
     <div>
@@ -45,13 +46,13 @@ const TopAiring = async () => {
         <Carousel
           opts={{
             align: "start",
-            loop: true,
+            loop: false,
             duration: 20,
             slidesToScroll: 2,
           }}
         >
           <CarouselContent className="-ml-2">
-            {episodesOfFirstPage.map((episode: ExplorePageCardProps) => (
+            {recentEpsPageOne.map((episode: ExplorePageCardProps) => (
               <CarouselItem
                 className="basis-2/2 md:basis-5/5 pl-3"
                 key={episode.id}
@@ -63,7 +64,7 @@ const TopAiring = async () => {
                   image={episode.image}
                   episodeId={episode.episodeId}
                   episodeNumber={episode.episodeNumber}
-                  priority={true}
+                  priority={false}
                 />
               </CarouselItem>
             ))}
@@ -82,7 +83,7 @@ const TopAiring = async () => {
           }}
         >
           <CarouselContent className="-ml-2">
-            {episodesOfSecondPage.map((episode: ExplorePageCardProps) => (
+            {recentEpsPageTwo.map((episode: ExplorePageCardProps) => (
               <CarouselItem
                 className="basis-2/2 md:basis-5/5 pl-3"
                 key={episode.id}
@@ -107,4 +108,4 @@ const TopAiring = async () => {
   );
 };
 
-export default TopAiring;
+export default RecentEps;

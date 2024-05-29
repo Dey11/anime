@@ -1,6 +1,6 @@
-import CarouselComponent from "@/app/anime/(explore)/carousel";
-import RecentEps from "@/app/anime/(explore)/recenteps";
-import TopAiring from "@/app/anime/(explore)/topairing";
+import CarouselComponent from "@/app/anime/(explore)/Carousel";
+import RecentEps from "@/app/anime/(explore)/RecentEps";
+import TopAiring from "@/app/anime/(explore)/TopAiring";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import Favourites from "./Favourites";

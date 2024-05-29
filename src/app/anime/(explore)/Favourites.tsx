@@ -1,5 +1,5 @@
 import { reduceName } from "@/lib/utils";
-import ExplorePageCard, { ExplorePageCardProps } from "./exploreCard";
+import ExplorePageCard, { ExplorePageCardProps } from "./ExploreCard";
 import {
   Carousel,
   CarouselContent,
