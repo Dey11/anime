@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Acme } from "next/font/google";
 import "./globals.css";
-import Header from "@/app/header";
-import Footer from "@/app/footer";
+import Header from "@/app/Header";
+import Footer from "@/app/Footer";
 import { SessionProvider } from "next-auth/react";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";

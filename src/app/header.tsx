@@ -25,7 +25,7 @@ import { useSession } from "next-auth/react";
 import { SignIn } from "../components/custom-ui/buttons/signInBtn";
 import { SignOut } from "../components/custom-ui/buttons/signOutBtn";
 
-import { DropdownMenuForLoggedIn } from "./loggedInUserMenu";
+import { DropdownMenuForLoggedIn } from "./LoggedInUserMenu";
 import SearchForm from "../components/custom-ui/searchForm";
 import { Button } from "../components/ui/button";
 

@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { Heart } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
-import { AnimeCardProps } from "@/components/animeCard";
+import { AnimeCardProps } from "@/components/AnimeCard";
 
 export interface FavCardProps extends AnimeCardProps {
   liked: boolean;

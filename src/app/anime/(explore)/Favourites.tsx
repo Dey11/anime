@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import prisma from "@/lib/prisma";
 import { auth } from "@/auth";
-import AnimeCard from "@/components/animeCard";
+import AnimeCard from "@/components/AnimeCard";
 
 const fetchFavourites = async (userId: string) => {
   try {

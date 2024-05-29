@@ -1,4 +1,4 @@
-import LoadingCard from "@/components/loadingCard";
+import LoadingCard from "@/components/LoadingCard";
 import {
   Carousel,
   CarouselContent,

@@ -1,6 +1,6 @@
 import AddToFav from "./AddToFav";
 import { auth } from "@/auth";
-import { AnimeCardProps } from "@/components/animeCard";
+import { AnimeCardProps } from "@/components/AnimeCard";
 import prisma from "@/lib/prisma";
 
 const FavouritesSection = async ({

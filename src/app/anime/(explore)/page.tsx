@@ -4,7 +4,7 @@ import TopAiring from "@/app/anime/(explore)/topairing";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import Favourites from "./Favourites";
-import LoadingCard from "@/components/loadingCard";
+import LoadingCard from "@/components/LoadingCard";
 import LoadingCarousel from "./LoadingCarousel";
 
 export const metadata: Metadata = {

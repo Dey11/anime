@@ -1,11 +1,11 @@
 "use client";
 
 import { Label } from "@/components/ui/label";
-import { ColorPicker } from "./colorpicker";
+import { ColorPicker } from "./Colorpicker";
 import { Input } from "@/components/ui/input";
 import { Key, Mail, Save } from "lucide-react";
 import Username from "./Username";
-import BioComponent from "./bio";
+import BioComponent from "./Bio";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";

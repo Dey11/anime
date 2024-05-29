@@ -1,6 +1,6 @@
 "use server";
 
-import { AnimeCardProps } from "@/components/animeCard";
+import { AnimeCardProps } from "@/components/AnimeCard";
 
 async function fetchSearchResults(query: string, page: number) {
   const url = process.env.BACKEND_URL;
