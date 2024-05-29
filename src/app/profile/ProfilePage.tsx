@@ -107,7 +107,7 @@ const ProfilePage = ({
             <Label className="flex flex-col gap-2">
               <span className="pl-2">Username</span>
               <div className="relative">
-                <Username name={username} />
+                <Username name={username} email={email} />
               </div>
             </Label>
 

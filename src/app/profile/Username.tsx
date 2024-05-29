@@ -5,7 +5,7 @@ import { User } from "lucide-react";
 import { useState } from "react";
 import { checkUsernameAvailability } from "@/actions/editProfile";
 
-const Username = ({ name }: { name: string }) => {
+const Username = ({ name, email }: { name: string; email: string }) => {
   const [username, setUsername] = useState<string>(name);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string>("");
@@ -18,7 +18,10 @@ const Username = ({ name }: { name: string }) => {
     }
     setError(null);
     try {
-      const isAvailable = await checkUsernameAvailability(e.target.value);
+      const isAvailable = await checkUsernameAvailability(
+        e.target.value,
+        email,
+      );
       if (isAvailable) {
         setSuccess("Username is available");
       } else {
