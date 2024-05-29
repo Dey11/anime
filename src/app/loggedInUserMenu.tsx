@@ -13,9 +13,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 export function DropdownMenuForLoggedIn() {
   const session = useSession();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -30,9 +32,11 @@ export function DropdownMenuForLoggedIn() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <User className="mr-2 h-4 w-4" />
-            <span>Profile (soon)</span>
+          <DropdownMenuItem asChild>
+            <Link href={"/profile"}>
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+            </Link>
           </DropdownMenuItem>
 
           <DropdownMenuItem>

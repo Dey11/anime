@@ -25,7 +25,7 @@ import { useSession } from "next-auth/react";
 import { SignIn } from "../components/custom-ui/buttons/signInBtn";
 import { SignOut } from "../components/custom-ui/buttons/signOutBtn";
 
-import { DropdownMenuForLoggedIn } from "../components/loggedInUserMenu";
+import { DropdownMenuForLoggedIn } from "./loggedInUserMenu";
 import SearchForm from "../components/custom-ui/searchForm";
 import { Button } from "../components/ui/button";
 
@@ -88,7 +88,9 @@ const Header = () => {
                 {session.status === "loading" ? "" : ""}
                 {session.status === "authenticated" ? <SignOut /> : ""}
                 {session.status === "unauthenticated" ? <SignIn /> : ""}
-                <Button variant={"destructive"}>Report a bug (soon)</Button>
+                <Button variant={"destructive"}>
+                  Feedback (bug/feature) (soon)
+                </Button>
               </div>
             </SheetHeader>
           </SheetContent>
