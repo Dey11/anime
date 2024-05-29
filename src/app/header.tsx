@@ -10,6 +10,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+import ReportDialog from "./ReportBugs";
+
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -88,9 +91,11 @@ const Header = () => {
                 {session.status === "loading" ? "" : ""}
                 {session.status === "authenticated" ? <SignOut /> : ""}
                 {session.status === "unauthenticated" ? <SignIn /> : ""}
-                <Button variant={"destructive"}>
+                <ReportDialog />
+
+                {/* <Button variant={"destructive"}>
                   Feedback (bug/feature) (soon)
-                </Button>
+                </Button> */}
               </div>
             </SheetHeader>
           </SheetContent>

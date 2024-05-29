@@ -7,7 +7,11 @@ type reportBugProps = {
   url: string;
 };
 
-async function reportBug({ username, description, url }: reportBugProps) {
+export default async function reportBug({
+  username,
+  description,
+  url,
+}: reportBugProps) {
   try {
     const newBug = await prisma.errors.create({
       data: {
@@ -16,10 +20,9 @@ async function reportBug({ username, description, url }: reportBugProps) {
         url,
       },
     });
-
-    console.log(newBug);
+    return true;
   } catch (err) {
     console.log(err);
-    return -1;
+    return false;
   }
 }
