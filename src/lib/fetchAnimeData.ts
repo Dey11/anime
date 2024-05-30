@@ -45,7 +45,6 @@ const fetchData = async (id: string): Promise<AnimeDetails> => {
     const result = await res.json();
     return result;
   } catch (err) {
-    console.log("meh");
     console.log(err);
 
     return {
