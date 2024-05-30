@@ -25,8 +25,8 @@ const page = () => {
         </Suspense>
       </div>
       <div>
-        <div className="pt-10 text-xl md:text-3xl">
-          <h1 className="pb-8">Top Airing Anime of the Season:</h1>
+        <div className="pt-10 text-lg md:text-3xl">
+          <h1 className="pb-5 md:pb-8">Top Airing Anime of the Season:</h1>
           <Suspense fallback={<LoadingCarousel />}>
             <TopAiring />
           </Suspense>
@@ -34,7 +34,7 @@ const page = () => {
       </div>
 
       <div>
-        <div className="pt-10 text-xl md:text-3xl">
+        <div className="pt-10 text-lg md:text-3xl">
           <h1 className="pb-8">Recent Episodes:</h1>
           <Suspense fallback={<LoadingCarousel />}>
             <RecentEps />

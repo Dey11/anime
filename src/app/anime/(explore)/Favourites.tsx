@@ -35,21 +35,19 @@ const Favourites = async () => {
 
   if (favs == -1) {
     return (
-      <div className="pt-10 text-xl md:text-3xl">
-        <h1 className="pb-8">Favourite Animes:</h1>
-        <div className="pb-10">
-          <div className="flex items-center justify-center">
-            An error occured. Please refresh the page or try again later
-          </div>
+      <div className="pt-10 text-lg md:text-3xl">
+        <h1 className="pb-2 md:pb-8">Favourites:</h1>
+        <div className="text-lg text-slate-400 md:pb-5">
+          An error occured. Please refresh the page or try again later
         </div>
       </div>
     );
   }
   if (favs.length == 0) {
     return (
-      <div className="pt-10 text-xl md:text-3xl">
-        <h1 className="pb-8">Favourites:</h1>
-        <div className="pb-5 text-xl text-slate-400">
+      <div className="pt-10 text-lg md:text-3xl">
+        <h1 className="pb-2 md:pb-8">Favourites:</h1>
+        <div className="text-lg text-slate-400 md:pb-5">
           Nothing to show here. Add an anime to favourites first.
         </div>
       </div>
@@ -58,7 +56,7 @@ const Favourites = async () => {
 
   return (
     <div>
-      <div className="pt-10 text-xl md:text-3xl">
+      <div className="pt-10 text-lg md:text-3xl">
         <h1 className="pb-8">Favourites:</h1>
         <Carousel
           opts={{
