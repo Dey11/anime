@@ -49,49 +49,56 @@ const StreamAnime = async ({
         <div className="text-2xl">Error. Invalid URL/Anime.</div>
       )}
       {animeInfo.id && episodeUrl[0].url && (
-        <div className="max-h-4xl max-w-4xl">
-          <div className="pb-5 text-lg md:pb-5 md:text-3xl">
-            <Link
-              href={`/anime/info/${params.animeId}`}
-              className="text-blue-100 hover:text-blue-500 hover:underline"
-            >
-              {animeInfo.title}
-            </Link>
-            <div className="text-md pt-2 md:pt-5">
-              Episode{` ${episodeNumber}`}
+        <div>
+          <div>
+            <div className="pb-5 text-lg md:pb-5 md:text-3xl">
+              <Link
+                href={`/anime/info/${params.animeId}`}
+                className="text-blue-100 hover:text-blue-500 hover:underline"
+              >
+                {animeInfo.title}
+              </Link>
+              <div className="text-md pt-2 md:pt-5">
+                Episode{` ${episodeNumber}`}
+              </div>
             </div>
           </div>
-          <div className="mx-2">
-            <Player
-              episodeNumber={episodeNumber[0].split("-")[0]}
-              episodeUrl={episodeUrl[0].url}
-              isAuthenticated={user ? true : false}
-            />
-          </div>
 
-          <div className="pt-8 text-lg">
-            <DownloadButton
-              url={downloadUrl}
-              isAuthenticated={user ? true : false}
-            />
-          </div>
+          <div className="max-h-2xl max-w-2xl">
+            <div className="mx-2">
+              <Player
+                episodeNumber={episodeNumber[0].split("-")[0]}
+                episodeUrl={episodeUrl[0].url}
+                isAuthenticated={user ? true : false}
+              />
+            </div>
 
-          <div>
-            <h1 className="py-5 text-lg md:text-3xl">Other episodes:</h1>
-            <div className="grid grid-cols-6 gap-2 md:grid-cols-12 md:gap-5">
-              {episodes.map((episode: { id: string; number: number }) => (
-                <Button
-                  asChild
-                  key={episode.id}
-                  variant={
-                    params.episodeId == episode.id ? "default" : "secondary"
-                  }
-                >
-                  <Link href={`/anime/stream/${params.animeId}/${episode.id}`}>
-                    {episode.number}
-                  </Link>
-                </Button>
-              ))}
+            <div className="pt-8 text-lg">
+              <DownloadButton
+                url={downloadUrl}
+                isAuthenticated={user ? true : false}
+              />
+            </div>
+
+            <div>
+              <h1 className="py-5 text-lg md:text-3xl">Other episodes:</h1>
+              <div className="grid grid-cols-6 gap-2 md:grid-cols-12 md:gap-5">
+                {episodes.map((episode: { id: string; number: number }) => (
+                  <Button
+                    asChild
+                    key={episode.id}
+                    variant={
+                      params.episodeId == episode.id ? "default" : "secondary"
+                    }
+                  >
+                    <Link
+                      href={`/anime/stream/${params.animeId}/${episode.id}`}
+                    >
+                      {episode.number}
+                    </Link>
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
