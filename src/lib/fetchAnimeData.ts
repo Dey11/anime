@@ -30,7 +30,7 @@ export interface AnimeDetails {
   episodes: episodes[];
 }
 
-type episodes = {
+export type episodes = {
   id: string;
   number: number;
 };
@@ -39,7 +39,7 @@ const fetchData = async (id: string): Promise<AnimeDetails> => {
   try {
     // console.log(process.env.BACKEND_URL);
     const res = await fetch(`${process.env.BACKEND_URL}/info/${id}`, {
-      next: { revalidate: 86400 },
+      next: { revalidate: 5 },
     });
 
     const result = await res.json();

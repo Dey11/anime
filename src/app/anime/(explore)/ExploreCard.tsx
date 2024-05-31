@@ -21,8 +21,8 @@ const ExplorePageCard = ({
   return (
     <Link href={`/anime/stream/${id}/${episodeId}`}>
       <div
-        className="duration-50 relative h-48 w-28 transform-gpu overflow-hidden rounded-md border
-         border-gray-300 transition-transform hover:scale-105 md:m-2 md:h-72 md:w-52"
+        className="duration-50 relative h-48 w-28 transform-gpu overflow-hidden rounded-md
+        border border-gray-300 transition-transform hover:scale-105 md:m-2 md:h-72 md:w-52"
       >
         <Image
           className="object-cover hover:bg-black hover:bg-opacity-65"

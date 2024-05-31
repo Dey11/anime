@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import DownloadButton from "@/components/custom-ui/buttons/downloadBtn";
 import { Player } from "./Player";
 import { auth } from "@/auth";
+// import PaginatedEpisodes from "./EpisodeCarousel";
 
 export async function generateMetadata({
   params,
@@ -64,7 +65,7 @@ const StreamAnime = async ({
             </div>
           </div>
 
-          <div className="max-h-2xl max-w-2xl">
+          <div className="max-h-3xl max-w-3xl">
             <div className="mx-2">
               <Player
                 episodeNumber={episodeNumber[0].split("-")[0]}
@@ -100,6 +101,12 @@ const StreamAnime = async ({
                 ))}
               </div>
             </div>
+            {/* <div className="pt-10">
+              <PaginatedEpisodes
+                episodes={episodes}
+                currEpId={params.episodeId}
+              />
+            </div> */}
           </div>
         </div>
       )}
