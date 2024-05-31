@@ -29,6 +29,7 @@ const ReportDialog = () => {
         description: "Please fill out all the fields before submitting",
         variant: "destructive",
       });
+      return;
     }
 
     try {
@@ -66,10 +67,10 @@ const ReportDialog = () => {
           <DialogHeader>
             <DialogTitle>Feedback</DialogTitle>
             <DialogDescription>
-              <h1 className="text-xs">
+              <span className="text-xs">
                 Report a bug or suggest a feature you'd love the website to
                 have. We're all ears!
-              </h1>
+              </span>
             </DialogDescription>
           </DialogHeader>
           <div className="mt-3">
@@ -78,9 +79,9 @@ const ReportDialog = () => {
                 <span>Your Username/Email</span>
                 <Input className="mt-2" name="username" />
               </Label>
-              <p className="mt-2 text-xs text-slate-500">
+              <span className="mt-2 text-xs text-slate-500">
                 This is so that we can ask you further questions if need be.
-              </p>
+              </span>
             </div>
 
             <div className="mt-5">
