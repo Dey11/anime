@@ -39,7 +39,7 @@ const fetchData = async (id: string): Promise<AnimeDetails> => {
   try {
     // console.log(process.env.BACKEND_URL);
     const res = await fetch(`${process.env.BACKEND_URL}/info/${id}`, {
-      next: { revalidate: 5 },
+      next: { revalidate: 3600 },
     });
 
     const result = await res.json();

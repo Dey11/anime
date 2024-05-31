@@ -13,7 +13,7 @@ const fetchTopAiring = async (page: number) => {
     const res = await fetch(
       `${process.env.BACKEND_URL}/top-airing?page=${page}`,
       {
-        next: { revalidate: 5 },
+        next: { revalidate: 3600 },
       },
     );
     const result = await res.json();
