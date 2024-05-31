@@ -32,18 +32,21 @@ const ExplorePageCard = ({
           sizes="fill"
           priority={priority}
         />
+
         <div
-          className="absolute bottom-0 left-0 right-0 bg-black 
-        bg-opacity-65 p-2 text-center
-        text-white"
+          className="hover:shadow-3xl absolute left-0 top-0 z-10 h-48 
+        w-28 items-center justify-center bg-transparent hover:bg-black
+        hover:bg-opacity-30 md:h-72 md:w-52"
         >
-          <div className="pb-2 text-sm md:text-lg">{title}</div>
-          <div className="text-sm">Episode:{` ${episodeNumber}`}</div>
+          <div
+            className="absolute bottom-0 left-0 right-0
+        bg-black bg-opacity-65 p-2
+        text-center text-white"
+          >
+            <div className="pb-2 text-sm md:text-lg">{title}</div>
+            <div className="text-sm">Episode:{` ${episodeNumber}`}</div>
+          </div>
         </div>
-        <div
-          className="absolute left-0 top-0 z-10 h-48 w-28 
-        items-center justify-center bg-transparent hover:bg-black hover:bg-opacity-30 hover:shadow-xl md:h-72 md:w-52"
-        ></div>
       </div>
     </Link>
   );
