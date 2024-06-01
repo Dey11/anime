@@ -26,7 +26,7 @@ const AddToFav = ({
   const { toast } = useToast();
 
   return (
-    <div>
+    <div className="ml-2 md:ml-5">
       <form
         action={async () => {
           try {
