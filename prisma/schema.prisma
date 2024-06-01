@@ -81,8 +81,9 @@ model FavouriteAnime {
 }
 
 model Errors {
-  errorId     String  @id @default(cuid())
+  errorId     String   @id @default(cuid())
   username    String
   description String
   url         String?
+  createdAt   DateTime @default(now())
 }
