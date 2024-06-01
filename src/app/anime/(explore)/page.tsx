@@ -4,7 +4,6 @@ import TopAiring from "@/app/anime/(explore)/TopAiring";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import Favourites from "./Favourites";
-import LoadingCard from "@/components/LoadingCard";
 import LoadingCarousel from "./LoadingCarousel";
 
 export const metadata: Metadata = {
@@ -15,8 +14,8 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="px-2">
-      <div className="">
+    <div className="mx-auto px-2 md:px-0">
+      <div className="mx-auto max-w-[280px] md:max-w-max">
         <CarouselComponent />
       </div>
       <div>
