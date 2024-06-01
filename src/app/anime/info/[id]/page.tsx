@@ -1,12 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import fetchData from "@/lib/fetchAnimeData";
-import { Button } from "@/components/ui/button";
 import { AnimeDetails } from "@/lib/fetchAnimeData";
-import Link from "next/link";
 import { Metadata } from "next";
 import FavouritesSection from "./FavouritesSection";
 import { Suspense } from "react";
+import EpisodesSection from "./EpisodesSection";
 
 export async function generateMetadata({
   params,
@@ -88,15 +87,7 @@ const AnimeInfo = async ({ params }: { params: { id: string } }) => {
       </div>
       <div>
         <h1 className="pb-5 text-2xl md:text-3xl">Episodes:</h1>
-        <div className="grid grid-cols-6 gap-5 md:grid-cols-12">
-          {episodes.map((episode: { id: string; number: number }) => (
-            <Button asChild variant={"default"} key={episode.id}>
-              <Link href={`/anime/stream/${params.id}/${episode.id}`}>
-                {episode.number}
-              </Link>
-            </Button>
-          ))}
-        </div>
+        <EpisodesSection episodes={episodes} animeId={params.id} />
       </div>
     </div>
   );
