@@ -22,8 +22,13 @@ model User {
   sessions        Session[]
   favouriteAnimes FavouriteAnime[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  Comments  Comments[]
+  Replies   Replies[]
+  likes     likes[]
+
+  @@unique([id, username])
 }
 
 model Account {
@@ -86,4 +91,50 @@ model Errors {
   description String
   url         String?
   createdAt   DateTime @default(now())
+}
+
+model Comments {
+  commentId   String    @id @default(cuid())
+  episodeId   String
+  animeId     String
+  userId      String
+  username    String
+  description String
+  likes       likes[]
+  replies     Replies[]
+
+  user User @relation(fields: [userId, username], references: [id, username])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Replies {
+  replyId     String  @id @default(cuid())
+  commentId   String
+  userId      String
+  username    String
+  description String
+  likes       likes[]
+
+  user     User     @relation(fields: [userId, username], references: [id, username])
+  comments Comments @relation(fields: [commentId], references: [commentId])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model likes {
+  likeId    String  @id @default(uuid())
+  userId    String
+  episodeId String
+  animeId   String
+  commentId String?
+  replyId   String?
+
+  user    User      @relation(fields: [userId], references: [id])
+  comment Comments? @relation(fields: [commentId], references: [commentId])
+  reply   Replies?  @relation(fields: [replyId], references: [replyId])
+
+  createdAt DateTime @default(now())
 }
