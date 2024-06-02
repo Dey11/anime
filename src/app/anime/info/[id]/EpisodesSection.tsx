@@ -12,7 +12,7 @@ const EpisodesSection = ({
   episodes: episodes[];
   animeId: string;
 }) => {
-  const paginationNumber = 48;
+  const paginationNumber = 100;
   const numberOfEps = episodes.length;
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(paginationNumber);
@@ -85,7 +85,7 @@ const MoreEps = ({
   animeId: string;
 }) => {
   return (
-    <div className="grid grid-cols-6 gap-1 md:grid-cols-12">
+    <div className="grid grid-cols-5 gap-1 md:grid-cols-10">
       {episodes
         .slice(startIndex, endIndex)
         .map((episode: { id: string; number: number }) => (
