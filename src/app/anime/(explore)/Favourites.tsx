@@ -55,7 +55,7 @@ const Favourites = async () => {
   }
 
   return (
-    <div>
+    <div className="overflow-x-hidden ">
       <div className="pt-10 text-lg md:text-3xl">
         <h1 className="pb-8">Favourites:</h1>
         <Carousel

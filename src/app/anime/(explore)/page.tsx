@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div className="mx-auto px-2 md:px-0">
-      <div className="mx-auto max-w-[280px] md:max-w-max">
+      <div className="mx-auto w-full min-w-[280px] md:max-w-max">
         <CarouselComponent />
       </div>
       <div>

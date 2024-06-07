@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const CarouselComponent = () => {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <Carousel
         opts={{
           align: "center",

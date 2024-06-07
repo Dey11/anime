@@ -9,7 +9,7 @@ import {
 
 const LoadingCarousel = () => {
   return (
-    <div className="pt-10 text-xl md:text-3xl">
+    <div className="overflow-x-hidden pt-10 text-xl md:text-3xl">
       <h1 className="pb-8">Favourites:</h1>
       <Carousel
         opts={{

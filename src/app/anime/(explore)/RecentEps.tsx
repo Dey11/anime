@@ -41,7 +41,7 @@ const RecentEps = async () => {
   }
 
   return (
-    <div>
+    <div className="overflow-x-hidden ">
       <div className="pb-10">
         <Carousel
           opts={{
